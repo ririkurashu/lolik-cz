@@ -3,7 +3,6 @@ const bot = new Discord.Client();
 const comms = require("./comms.js"); // Подключаем файл с командами для бота
 const fs = require('fs'); // Подключаем родной модуль файловой системы node.js  
 let config = require('./botconfig.json'); //подключаем файл конфигурации
-let token = config.token; //"достаём" токен
 let prefix = config.prefix; //"достаём" префикс
 
 //создаём ссылку-приглашение для бота
@@ -52,4 +51,4 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 	}
 })
 
-bot.login(token);
+bot.login(process.env.BOT_TOKEN);
