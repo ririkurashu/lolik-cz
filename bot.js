@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const comms = require("./comms.js"); // Подключаем файл с командами для бота
 const fs = require('fs'); // Подключаем родной модуль файловой системы node.js  
+const ytdl = require('ytdl-core');
 let config = require('./botconfig.json'); //подключаем файл конфигурации
 let prefix = config.prefix; //"достаём" префикс
 
@@ -43,11 +44,10 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 		console.log("1337");
 		var voiceChannel = newState.member.voice.channel;
 		voiceChannel.join().then(connection =>{
-		const dispatcher = connection.play('./cumzone.mp3');
-		dispatcher.on("speaking", speaking => {
-			if(!speaking) voiceChannel.leave();
-		});
-	}).catch(err => console.log(err));
+			const stream = ytdl('https://youtu.be/ODdTcug_3tA', { filter: 'audioonly' });
+			const dispatcher = connection.play(stream);
+			dispatcher.on('finish', () => voiceChannel.leave());
+		}).catch(err => console.log(err));
 	}
 })
 
