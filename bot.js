@@ -1,28 +1,20 @@
 const Discord = require('discord.js'); 
 const bot = new Discord.Client();
-const comms = require("./comms.js"); // Подключаем файл с командами для бота
-const fs = require('fs'); // Подключаем родной модуль файловой системы node.js  
+const comms = require("./comms.js");
+const fs = require('fs');
 const { OpusEncoder } = require('@discordjs/opus');
-let config = require('./botconfig.json'); //подключаем файл конфигурации
-let prefix = config.prefix; //"достаём" префикс
+let config = require('./botconfig.json');
+const { Server } = require('http');
+let token = config.token;
+let prefix = config.prefix;
 
-//создаём ссылку-приглашение для бота
-/*
-bot.on('ready', () => { 
-    console.log(`Запустился бот ${bot.user.username}`);
-    bot.generateInvite(["ADMINISTRATOR"]).then(link => { 
-        console.log(link);
-    });
-});
-*/
-
-bot.on("ready", function(){ /* Бот при запуске должен отправить в терминал сообщение «[Имя бота] запустился!» */
-	console.log(bot.user.username + " запустился!");
+bot.on("ready", function(){
+	console.log(bot.user.username + " launched successfully");
 	console.log("https://discord.com/api/oauth2/authorize?client_id=749320971890196600&permissions=3148800&scope=bot");
 });
 
 
-bot.on("message", msg => { // Реагирование на сообщения
+bot.on("message", msg => {
 	if(msg.author.username != bot.user.username && msg.author.discriminator != bot.user.discriminator){
     	var comm = msg.content.trim()+" ";
 	    var ok = false;
@@ -39,17 +31,16 @@ bot.on("message", msg => { // Реагирование на сообщения
 
 
 bot.on("voiceStateUpdate", async (oldState, newState) => {
-	if(newState.member.user.username != bot.user.username && newState.member.user.discriminator != bot.user.discriminator && newState.channel != oldState.channel && newState.channel)
-	{
-		console.log("1337");
+	if(newState.member.user.username != bot.user.username && newState.member.user.discriminator != bot.user.discriminator && newState.channel != oldState.channel && newState.channel){
+		console.log("<1337> User", newState.member.user.username, "has connected to the", newState.channel.name, "channel");
 		var voiceChannel = newState.member.voice.channel;
 		voiceChannel.join().then(connection =>{
-		const dispatcher = connection.play('./cumzone.mp3');
-		dispatcher.on("speaking", speaking => {
-			if(!speaking) voiceChannel.leave();
-		});
-	}).catch(err => console.log(err));
+			const dispatcher = connection.play('./cumzone.mp3');
+			dispatcher.on("speaking", speaking => {
+				if(!speaking) voiceChannel.leave();
+			});
+		}).catch(err => console.log(err));
 	}
 })
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(token);
