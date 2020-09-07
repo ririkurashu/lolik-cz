@@ -33,13 +33,20 @@ bot.on("message", msg => {
 bot.on("voiceStateUpdate", async (oldState, newState) => {
 	if(newState.member.user.username != bot.user.username && newState.member.user.discriminator != bot.user.discriminator && newState.channel != oldState.channel && newState.channel){
 		console.log("<1337> User", newState.member.user.username, "has connected to the", newState.channel.name, "channel");
-		var voiceChannel = newState.member.voice.channel;
-		voiceChannel.join().then(connection =>{
-			const dispatcher = connection.play('./cumzone.mp3');
-			dispatcher.on("speaking", speaking => {
-				if(!speaking) voiceChannel.leave();
-			});
-		}).catch(err => console.log(err));
+		if(newState.member.user.id == "311230924031524865" || newState.member.user.id == "659824944275783701"){
+			var voiceChannel = newState.member.voice.channel;
+			voiceChannel.join().then(connection =>{
+				const dispatcher = connection.play('./jevachka.mp3');
+				dispatcher.on('finish', () => voiceChannel.leave());
+			}).catch(err => console.log(err));
+		}
+		else{
+			var voiceChannel = newState.member.voice.channel;
+			voiceChannel.join().then(connection =>{
+				const dispatcher = connection.play('./cumzone.mp3');
+				dispatcher.on('finish', () => voiceChannel.leave());
+			}).catch(err => console.log(err));
+		}
 	}
 })
 

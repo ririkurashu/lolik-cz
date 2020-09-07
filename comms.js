@@ -15,9 +15,7 @@ function play (bot, mess, args) {
         var voiceChannel = mess.member.voice.channel;
 	voiceChannel.join().then(connection =>{
                 const dispatcher = connection.play('./cumzone.mp3');
-                dispatcher.on("speaking", speaking => {
-                        if(!speaking) voiceChannel.leave();
-                });
+                dispatcher.on('finish', () => voiceChannel.leave());
 	}).catch(err => console.log(err));
 }
 
