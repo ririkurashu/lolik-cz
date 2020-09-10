@@ -33,6 +33,41 @@ bot.on("message", msg => {
 bot.on("voiceStateUpdate", async (oldState, newState) => {
 	if(newState.member.user.username != bot.user.username && newState.member.user.discriminator != bot.user.discriminator && newState.channel != oldState.channel && newState.channel){
 		console.log("<1337> User", newState.member.user.username, "has connected to the", newState.channel.name, "channel");
+		
+		switch(newState.member.user.id){
+			case "311230924031524865": // Марк
+				var voiceChannel = newState.member.voice.channel;
+				voiceChannel.join().then(connection =>{
+					const dispatcher = connection.play('./jevachka.mp3');
+					dispatcher.on('finish', () => voiceChannel.leave());
+				}).catch(err => console.log(err));
+				break;
+
+			case "659824944275783701": // Марк 2
+				var voiceChannel = newState.member.voice.channel;
+				voiceChannel.join().then(connection =>{
+					const dispatcher = connection.play('./jevachka.mp3');
+					dispatcher.on('finish', () => voiceChannel.leave());
+				}).catch(err => console.log(err));
+				break;
+
+			case "298158176824459265": // РоманГ
+				var voiceChannel = newState.member.voice.channel;
+				voiceChannel.join().then(connection =>{
+					const dispatcher = connection.play('./monkyflip.mp3');
+					dispatcher.on('finish', () => voiceChannel.leave());
+				}).catch(err => console.log(err));
+				break;
+
+			default:
+				var voiceChannel = newState.member.voice.channel;
+				voiceChannel.join().then(connection =>{
+					const dispatcher = connection.play('./cumzone.mp3');
+					dispatcher.on('finish', () => voiceChannel.leave());
+				}).catch(err => console.log(err));
+		}
+
+		/*
 		if(newState.member.user.id == "311230924031524865" || newState.member.user.id == "659824944275783701"){
 			var voiceChannel = newState.member.voice.channel;
 			voiceChannel.join().then(connection =>{
@@ -47,6 +82,7 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 				dispatcher.on('finish', () => voiceChannel.leave());
 			}).catch(err => console.log(err));
 		}
+		*/
 	}
 })
 
