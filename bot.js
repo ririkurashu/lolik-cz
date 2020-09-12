@@ -59,6 +59,14 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 				}).catch(err => console.log(err));
 				break;
 
+			case "295248007807369228": // Пашок
+				var voiceChannel = newState.member.voice.channel;
+				voiceChannel.join().then(connection =>{
+					const dispatcher = connection.play('./zvonitotec.mp3');
+					dispatcher.on('finish', () => voiceChannel.leave());
+				}).catch(err => console.log(err));
+				break;
+
 			default:
 				var voiceChannel = newState.member.voice.channel;
 				voiceChannel.join().then(connection =>{
