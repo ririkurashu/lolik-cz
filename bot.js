@@ -66,6 +66,14 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 					dispatcher.on('finish', () => voiceChannel.leave());
 				}).catch(err => console.log(err));
 				break;
+			
+			case "151737968669753344": // Зебра
+				var voiceChannel = newState.member.voice.channel;
+				voiceChannel.join().then(connection =>{
+					const dispatcher = connection.play('./deadinside.mp3');
+					dispatcher.on('finish', () => voiceChannel.leave());
+				}).catch(err => console.log(err));
+				break;
 
 			default:
 				var voiceChannel = newState.member.voice.channel;
