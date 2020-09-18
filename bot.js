@@ -83,6 +83,14 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 				}).catch(err => console.log(err));
 				break;
 			
+			case "338635038583422977": // Аня
+				var voiceChannel = newState.member.voice.channel;
+				voiceChannel.join().then(connection =>{
+					const dispatcher = connection.play('./papich.mp3');
+					dispatcher.on('finish', () => voiceChannel.leave());
+				}).catch(err => console.log(err));
+				break;
+			
 			default:
 				var voiceChannel = newState.member.voice.channel;
 				voiceChannel.join().then(connection =>{
