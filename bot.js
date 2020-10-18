@@ -54,7 +54,7 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 			case "298158176824459265": // РоманГ
 				var voiceChannel = newState.member.voice.channel;
 				voiceChannel.join().then(connection =>{
-					const dispatcher = connection.play('./monkyflip.mp3');
+					const dispatcher = connection.play('./blackbox.mp3');
 					dispatcher.on('finish', () => voiceChannel.leave());
 				}).catch(err => console.log(err));
 				break;
