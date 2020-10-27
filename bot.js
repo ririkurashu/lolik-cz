@@ -78,7 +78,7 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 			case "704279535780233326": // РомиК
 				var voiceChannel = newState.member.voice.channel;
 				voiceChannel.join().then(connection =>{
-					const dispatcher = connection.play('./alien.mp3');
+					const dispatcher = connection.play('./ghostrule.mp3');
 					dispatcher.on('finish', () => voiceChannel.leave());
 				}).catch(err => console.log(err));
 				break;
