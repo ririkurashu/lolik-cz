@@ -1,1 +1,1 @@
-worker: node bot.js
+worker: npm install --save find
