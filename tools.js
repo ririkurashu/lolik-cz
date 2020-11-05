@@ -57,13 +57,12 @@ module.exports = {
                 case "704279535780233326": // РомиК
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        var playList = ['./alien.mp3', './ghostrule.mp3']
-                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
+                        const dispatcher = connection.play('./nukoworld.mp3');
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
                 
-                case "338635038583422977": // Аня
+                case "338635038583422977": // Аня Марк
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
                         const dispatcher = connection.play('./papich.mp3');
@@ -75,6 +74,14 @@ module.exports = {
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
                         const dispatcher = connection.play('./musette.mp3');
+                        dispatcher.on('finish', () => voiceChannel.leave());
+                    }).catch(err => console.log(err));
+                    break;
+
+                case "436212253058924555": // Аня Пашок
+                    var voiceChannel = mem.voice.channel;
+                    voiceChannel.join().then(connection => {
+                        const dispatcher = connection.play('./upsidedown.mp3');
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
