@@ -18,19 +18,23 @@ function play (bot, mess, args) {
         {
                 if(mess.member.voice.channel.permissionsFor(mess.member.client.user).has("CONNECT") && mess.member.voice.channel.permissionsFor(mess.member.client.user).has("SPEAK")){
                         var voiceChannel = mess.member.voice.channel;
-                        var files = fs.readdirSync("./");
-                        for(i = 0; i < files.length; i++){
-                                if(files[i].indexOf(".mp3") == -1) {
-                                        files.splice(i, 1);
-                                        i--;
+                        if(args[1])
+                        {
+                                var files = fs.readdirSync("./");
+                                for(i = 0; i < files.length; i++){
+                                        if(files[i].indexOf(".mp3") == -1) {
+                                                files.splice(i, 1);
+                                                i--;
+                                        }
+                                        else files[i] = files[i].slice(0, files[i].lastIndexOf(".mp3"));
                                 }
-                                else files[i] = files[i].slice(0, files[i].lastIndexOf(".mp3"));
-                        }
-                        if(args[1] && files.indexOf(args[1]) > -1){
-                                voiceChannel.join().then(connection => {
-                                        const dispatcher = connection.play(`./${args[1]}.mp3`);
-                                        dispatcher.on('finish', () => voiceChannel.leave());
-                                }).catch(err => console.log(err));
+                                if(files.indexOf(args[1]) > -1){
+                                        voiceChannel.join().then(connection => {
+                                                const dispatcher = connection.play(`./${args[1]}.mp3`);
+                                                dispatcher.on('finish', () => voiceChannel.leave());
+                                        }).catch(err => console.log(err));
+                                }
+                                else mess.channel.send("Не могу найти файл с таким названием. Вызовите `cz!help` и сверьтесь со списком.");
                         }
                         else{
                                 voiceChannel.join().then(connection => {
