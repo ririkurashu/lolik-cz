@@ -15,7 +15,8 @@ module.exports = {
                 case "311230924031524865": // Марк
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./jevachka.mp3');
+                        var playList = ['./jevachka.mp3', './waidmannsheil.mp3']
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
@@ -23,7 +24,8 @@ module.exports = {
                 case "659824944275783701": // Марк 2
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./jevachka.mp3');
+                        var playList = ['./jevachka.mp3', './waidmannsheil.mp3']
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
@@ -55,7 +57,8 @@ module.exports = {
                 case "704279535780233326": // РомиК
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./ghostrule.mp3');
+                        var playList = ['./alien.mp3', './ghostrule.mp3']
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
