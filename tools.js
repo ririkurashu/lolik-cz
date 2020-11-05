@@ -76,6 +76,7 @@ module.exports = {
                     }).catch(err => console.log(err));
                     break;
 
+                /*
                 case "643129279298928641": // я
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
@@ -84,7 +85,8 @@ module.exports = {
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
-
+                */
+               
                 default:
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
