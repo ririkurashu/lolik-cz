@@ -1,5 +1,4 @@
 const Discord = require('discord.js'); 
-var find = require('find');
 const bot = new Discord.Client();
 const comms = require("./comms.js");
 const tools = require("./tools.js");

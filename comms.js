@@ -1,6 +1,6 @@
 const config = require('./botconfig.json');
 const tools = require("./tools.js");
-var find = require('find');
+const fs = require('fs');
 const Discord = require('discord.js'); 
 const prefix = config.prefix;
 
@@ -8,7 +8,7 @@ async function stop (bot, mess, args)
 {
         if(mess.author.id != "643129279298928641") return mess.channel.send("сосеш")
         else{
-                await mess.channel.send("выключаю");
+                await mess.channel.send("Бот выключается.");
                 process.exit();
         }
 }
@@ -18,9 +18,13 @@ function play (bot, mess, args) {
         {
                 if(mess.member.voice.channel.permissionsFor(mess.member.client.user).has("CONNECT") && mess.member.voice.channel.permissionsFor(mess.member.client.user).has("SPEAK")){
                         var voiceChannel = mess.member.voice.channel;
-                        var files = find.fileSync(/\.mp3$/, __dirname);
+                        var files = fs.readdirSync("./");
                         for(i = 0; i < files.length; i++){
-                                files[i] = files[i].slice(files[i].lastIndexOf("\\") + 1, files[i].lastIndexOf(".mp3"));
+                                if(files[i].indexOf(".mp3") == -1) {
+                                        files.splice(i, 1);
+                                        i--;
+                                }
+                                else files[i] = files[i].slice(0, files[i].lastIndexOf(".mp3"));
                         }
                         if(args[1] && files.indexOf(args[1]) > -1){
                                 voiceChannel.join().then(connection => {
@@ -48,13 +52,21 @@ function playme (bot, mess, args) {
 }
 
 function help (bot, mess, args) {
-        find.file(/\.mp3$/, __dirname, function(files) {
-                mp3files = "";
-                for(i = 0; i < files.length; i++){
-                        mp3files += "\n`" + files[i].slice(files[i].lastIndexOf("\\") + 1, files[i].lastIndexOf(".mp3")) + "`";
+        mp3files = "";
+        var files = fs.readdirSync("./");
+        for(i = 0; i < files.length; i++){
+                if(files[i].indexOf(".mp3") == -1) {
+                        files.splice(i, 1);
+                        i--;
                 }
-                mess.channel.send("**Команды бота:**\n`cz!play` — приглашает вас в зону кончания.\n`cz!play <название>` — проигрывает конкретный файл приветствия. Cписок названий всех файлов - ниже.\n`cz!playme` — проигрывает ваше персональное приветствие.\n\nДоступные музыкальные файлы:" + mp3files);
-        })
+                else {
+                        files[i] = files[i].slice(0, files[i].lastIndexOf(".mp3"));
+                        mp3files += "\n`" + files[i] + "`";
+                }
+        }
+        console.log(files);
+        mess.channel.send("**Команды бота:**\n`cz!play` — приглашает вас в зону кончания.\n`cz!play <название>` — проигрывает конкретный файл приветствия. Cписок названий всех файлов - ниже.\n`cz!playme` — проигрывает ваше персональное приветствие.\n\nДоступные музыкальные файлы:" + mp3files);
+        
 }
 
 var comms_list = [
