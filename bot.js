@@ -16,7 +16,7 @@ bot.on("ready", function(){
 });
 
 bot.on("message", msg => {
-	if(msg.author.username != bot.user.username && msg.author.discriminator != bot.user.discriminator && msg.content.slice(0, msg.content.indexOf("!") + 1) == prefix){
+	if(msg.author.username != bot.user.username && msg.author.discriminator != bot.user.discriminator && msg.content.slice(0, msg.content.indexOf("!") + 1) == prefix && msg.channel.id != "656239794636062772"){
     	var comm = msg.content.trim()+" ";
 	    var ok = false;
 	    var comm_name = comm.slice(0, comm.indexOf(" "));
