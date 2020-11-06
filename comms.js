@@ -22,15 +22,15 @@ function play (bot, mess, args) {
                         {
                                 var files = fs.readdirSync("./");
                                 for(i = 0; i < files.length; i++){
-                                        if(files[i].indexOf(".mp3") == -1) {
+                                        if(files[i].indexOf(".mp3") == -1 || files[i].indexOf(".mp3.sfk") > -1) {
                                                 files.splice(i, 1);
                                                 i--;
                                         }
                                         else files[i] = files[i].slice(0, files[i].lastIndexOf(".mp3"));
                                 }
-                                if(files.indexOf(args[1]) > -1){
+                                if(files.indexOf(args[1].toLowerCase()) > -1){
                                         voiceChannel.join().then(connection => {
-                                                const dispatcher = connection.play(`./${args[1]}.mp3`);
+                                                const dispatcher = connection.play(`./${args[1].toLowerCase()}.mp3`);
                                                 dispatcher.on('finish', () => voiceChannel.leave());
                                         }).catch(err => console.log(err));
                                 }
@@ -59,7 +59,7 @@ function help (bot, mess, args) {
         mp3files = "";
         var files = fs.readdirSync("./");
         for(i = 0; i < files.length; i++){
-                if(files[i].indexOf(".mp3") == -1) {
+                if(files[i].indexOf(".mp3") == -1 || files[i].indexOf(".mp3.sfk") > -1) {
                         files.splice(i, 1);
                         i--;
                 }

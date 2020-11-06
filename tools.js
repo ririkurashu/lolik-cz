@@ -85,9 +85,17 @@ module.exports = {
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
+                
+                case "643129279298928641": // я
+                    var voiceChannel = mem.voice.channel;
+                    voiceChannel.join().then(connection => {
+                        const dispatcher = connection.play('./tinylittleadiantum.mp3');
+                        dispatcher.on('finish', () => voiceChannel.leave());
+                    }).catch(err => console.log(err));
+                    break;
 
                 /*
-                case "643129279298928641": // я
+                case " ": // рандом
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
                         var playList = ['./zvonitotec.mp3', './jevachka.mp3', './deadinside.mp3']
