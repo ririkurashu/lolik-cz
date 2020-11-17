@@ -33,7 +33,8 @@ module.exports = {
                 case "298158176824459265": // РоманГ
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./brazil.mp3');
+                        var playList = ['./blackbox.mp3', './brazil.mp3']
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
