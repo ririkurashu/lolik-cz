@@ -5,7 +5,7 @@ const prefix = config.prefix;
 function getRdmInt(min, max){
 	min = Math.ceil(min);
 	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 module.exports = {
@@ -33,7 +33,7 @@ module.exports = {
                 case "298158176824459265": // РоманГ
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./blackbox.mp3');
+                        const dispatcher = connection.play('./brazil.mp3');
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
