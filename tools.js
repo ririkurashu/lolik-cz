@@ -38,9 +38,15 @@ module.exports = {
                 case "298158176824459265": // РоманГ
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        var playList = ['./blackbox.mp3', './brazil.mp3', './indihome.mp3']
-                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
-                        dispatcher.on('finish', () => voiceChannel.leave());
+                        if(gacha(0.05)) {
+                            const dispatcher = connection.play('./brasilhomebox.secret.mp3');
+                            dispatcher.on('finish', () => voiceChannel.leave());
+                        }
+                        else {
+                            var playList = ['./blackbox.mp3', './brazil.mp3', './indihome.mp3']
+                            const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
+                            dispatcher.on('finish', () => voiceChannel.leave());
+                        }
                     }).catch(err => console.log(err));
                     break;
 
@@ -112,14 +118,8 @@ module.exports = {
                 case "643129279298928641": // я
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        if(gacha(0.3)) {
-                            const dispatcher = connection.play('./brasilhomebox.secret.mp3');
-                            dispatcher.on('finish', () => voiceChannel.leave());
-                        }
-                        else {
-                            const dispatcher = connection.play('./sayso.mp3');
-                            dispatcher.on('finish', () => voiceChannel.leave());
-                        }
+                        const dispatcher = connection.play('./sayso.mp3');
+                        dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
 
@@ -133,7 +133,23 @@ module.exports = {
                     }).catch(err => console.log(err));
                     break;
                 */
-               
+                
+                /*
+                case " ": // гача
+                    var voiceChannel = mem.voice.channel;
+                    voiceChannel.join().then(connection => {
+                        if(gacha(0.3)) {
+                            const dispatcher = connection.play('./brasilhomebox.secret.mp3');
+                            dispatcher.on('finish', () => voiceChannel.leave());
+                        }
+                        else {
+                            const dispatcher = connection.play('./sayso.mp3');
+                            dispatcher.on('finish', () => voiceChannel.leave());
+                        }
+                    }).catch(err => console.log(err));
+                    break;
+                */
+                
                 default:
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
