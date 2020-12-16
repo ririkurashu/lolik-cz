@@ -5,18 +5,23 @@ const prefix = config.prefix;
 function getRdmInt(min, max){
 	min = Math.ceil(min);
 	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min + 1)) + min;
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function gacha(coeff){
+    if(Math.random() < coeff) return 1;
+    else return 0;
 }
 
 module.exports = {
-    greeting: function (mem) {
+    greeting: function(mem){
         if(mem.voice.channel.permissionsFor(mem.client.user).has("CONNECT") && mem.voice.channel.permissionsFor(mem.client.user).has("SPEAK")){
             switch(mem.user.id){
                 case "311230924031524865": // Марк
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
                         var playList = ['./yaebu.mp3', './waidmannsheil.mp3']
-                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
@@ -25,7 +30,7 @@ module.exports = {
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
                         var playList = ['./jevachka.mp3', './waidmannsheil.mp3']
-                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
@@ -34,7 +39,7 @@ module.exports = {
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
                         var playList = ['./blackbox.mp3', './brazil.mp3', './indihome.mp3']
-                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
@@ -91,7 +96,7 @@ module.exports = {
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
                         var playList = ['./samurai.mp3', './devochkanoch.mp3', './geisha.mp3']
-                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
@@ -107,7 +112,8 @@ module.exports = {
                 case "643129279298928641": // я
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./sayso.mp3');
+                        if(gacha(0.3)) const dispatcher = connection.play('./brasilhomebox.secret.mp3');
+                        else const dispatcher = connection.play('./sayso.mp3');
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;

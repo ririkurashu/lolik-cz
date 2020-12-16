@@ -68,14 +68,14 @@ function help (bot, mess, args) {
                         mp3files += "\n`" + files[i] + "`";
                 }
         }
-        mess.channel.send("**Команды бота:**\n`cz!play` — приглашает вас в зону кончания.\n`cz!play <название>` — проигрывает конкретный файл приветствия.\n`cz!tracklist` — Показывает список названий всех mp3 файлов.\n`cz!playme` — проигрывает ваше персональное приветствие.");
+        mess.channel.send("**Команды бота:**\n`cz!play` — приглашает вас в зону кончания.\n`cz!play <название>` — проигрывает конкретный файл приветствия.\n`cz!tracklist` — показывает список названий всех mp3 файлов.\n`cz!playme` — проигрывает ваше персональное приветствие.");
 }
 
 function tracklist (bot, mess, args) {
         mp3files = "";
         var files = fs.readdirSync("./");
         for(i = 0; i < files.length; i++){
-                if(files[i].indexOf(".mp3") == -1 || files[i].indexOf(".mp3.sfk") > -1) {
+                if(files[i].indexOf(".mp3") == -1 || files[i].indexOf(".mp3.sfk") > -1 || files[i].indexOf(".secret") > -1) {
                         files.splice(i, 1);
                         i--;
                 }
