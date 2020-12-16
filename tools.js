@@ -112,10 +112,14 @@ module.exports = {
                 case "643129279298928641": // я
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher;
-                        if(gacha(0.3)) dispatcher = connection.play('./brasilhomebox.secret.mp3');
-                        else dispatcher = connection.play('./sayso.mp3');
-                        dispatcher.on('finish', () => voiceChannel.leave());
+                        if(gacha(0.3)) {
+                            const dispatcher = connection.play('./brasilhomebox.secret.mp3');
+                            dispatcher.on('finish', () => voiceChannel.leave());
+                        }
+                        else {
+                            const dispatcher = connection.play('./sayso.mp3');
+                            dispatcher.on('finish', () => voiceChannel.leave());
+                        }
                     }).catch(err => console.log(err));
                     break;
 
