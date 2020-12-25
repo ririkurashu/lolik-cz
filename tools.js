@@ -17,10 +17,12 @@ module.exports = {
     greeting: function(mem){
         if(mem.voice.channel.permissionsFor(mem.client.user).has("CONNECT") && mem.voice.channel.permissionsFor(mem.client.user).has("SPEAK")){
             switch(mem.user.id){
+
+            /*
                 case "311230924031524865": // Марк
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        var playList = ['./yaebu.mp3', './waidmannsheil.mp3']
+                        var playList = ['./yaebu.mp3', './waidmannsheil.mp3'];
                         const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
@@ -29,7 +31,7 @@ module.exports = {
                 case "659824944275783701": // Марк 2
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        var playList = ['./jevachka.mp3', './waidmannsheil.mp3']
+                        var playList = ['./jevachka.mp3', './waidmannsheil.mp3'];
                         const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
@@ -43,7 +45,7 @@ module.exports = {
                             dispatcher.on('finish', () => voiceChannel.leave());
                         }
                         else {
-                            var playList = ['./blackbox.mp3', './brazil.mp3', './indihome.mp3']
+                            var playList = ['./blackbox.mp3', './brazil.mp3', './indihome.mp3'];
                             const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                             dispatcher.on('finish', () => voiceChannel.leave());
                         }
@@ -101,7 +103,7 @@ module.exports = {
                 case "481411339156455425": // Полина
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        var playList = ['./samurai.mp3', './devochkanoch.mp3', './geisha.mp3']
+                        var playList = ['./samurai.mp3', './devochkanoch.mp3', './geisha.mp3'];
                         const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
@@ -122,12 +124,13 @@ module.exports = {
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
+            */
 
                 /*
                 case " ": // рандом
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        var playList = ['./zvonitotec.mp3', './jevachka.mp3', './deadinside.mp3']
+                        var playList = ['./zvonitotec.mp3', './jevachka.mp3', './deadinside.mp3'];
                         const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
@@ -153,7 +156,8 @@ module.exports = {
                 default:
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./cumzone.mp3');
+                        var playList = ['./noviygod.mp3', './lastchristmas.mp3', './korojingle.mp3', './padoru.mp3'];
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
             }
