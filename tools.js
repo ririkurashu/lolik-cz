@@ -131,7 +131,7 @@ module.exports = {
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
                         var playList = ['./zvonitotec.mp3', './jevachka.mp3', './deadinside.mp3'];
-                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
@@ -157,7 +157,7 @@ module.exports = {
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
                         var playList = ['./noviygod.mp3', './lastchristmas.mp3', './korojingle.mp3', './padoru.mp3'];
-                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length - 1)]);
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
             }
