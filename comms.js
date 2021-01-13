@@ -34,7 +34,7 @@ function play (bot, mess, args) {
                                                 dispatcher.on('finish', () => voiceChannel.leave());
                                         }).catch(err => console.log(err));
                                 }
-                                else mess.channel.send("Не могу найти файл с таким названием. Вызовите `cz!help` и сверьтесь со списком.");
+                                else mess.channel.send("Не могу найти файл с таким названием.\nВызовите `cz!tracklist` и сверьтесь со списком.");
                         }
                         else{
                                 voiceChannel.join().then(connection => {
