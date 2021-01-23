@@ -43,7 +43,7 @@ module.exports = {
                             dispatcher.on('finish', () => voiceChannel.leave());
                         }
                         else {
-                            var playList = ['./blackbox.mp3', './brazil.mp3', './indihome.mp3']
+                            var playList = ['./blackbox.mp3', './brazil.mp3', './indihome.mp3', './romashki.mp3']
                             const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                             dispatcher.on('finish', () => voiceChannel.leave());
                         }
@@ -69,7 +69,7 @@ module.exports = {
                 case "704279535780233326": // РомиК
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./pekopeko.mp3');
+                        const dispatcher = connection.play('./pekoecchi.secret.mp3');
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
