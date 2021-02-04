@@ -118,7 +118,7 @@ module.exports = {
                 case "643129279298928641": // я
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./sayso.mp3');
+                        const dispatcher = connection.play('./watamelullaby.mp3');
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
