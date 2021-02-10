@@ -153,6 +153,7 @@ module.exports = {
                 */
                 
                 default:
+                    console.log("11111111111111111111111111111111111111111111111111111111111111111111111");
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
                         const dispatcher = connection.play('./hatersgonnahate.mp3');
