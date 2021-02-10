@@ -153,12 +153,7 @@ module.exports = {
                 */
                 
                 default:
-                    console.log("11111111111111111111111111111111111111111111111111111111111111111111111");
-                    var voiceChannel = mem.voice.channel;
-                    voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./hatersgonnahate.mp3');
-                        dispatcher.on('finish', () => voiceChannel.leave());
-                    }).catch(err => console.log(err));
+                    
             }
         }
         else console.log("The bot doesn't have a permission to join and/or speak in", mem.voice.channel.name, "channel");
