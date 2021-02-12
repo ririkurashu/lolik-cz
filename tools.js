@@ -17,7 +17,6 @@ module.exports = {
     greeting: function(mem){
         if(mem.voice.channel.permissionsFor(mem.client.user).has("CONNECT") && mem.voice.channel.permissionsFor(mem.client.user).has("SPEAK")){
             switch(mem.user.id){
-                /*
                 case "311230924031524865": // Марк
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
@@ -123,7 +122,6 @@ module.exports = {
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
-*/
 
                 /*
                 case " ": // рандом
@@ -155,11 +153,11 @@ module.exports = {
                 default:
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./hatersgonnahate.mp3');
+                        const dispatcher = connection.play('./cumzone.mp3');
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
             }
         }
-        else console.log("The bot doesn't have a permission to join and/or speak in the channel");
+        else console.log("The bot doesn't have a permission to join and/or speak in", mem.voice.channel.name, "channel");
     }
 }
