@@ -85,7 +85,7 @@ module.exports = {
                 case "239101440256245762": // Колян
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./napasfederation.mp3');
+                        const dispatcher = connection.play('./gatsu.mp3');
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
