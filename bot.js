@@ -14,6 +14,12 @@ function gacha(coeff){
     else return 0;
 }
 
+function getRdmInt(min, max){
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+
 bot.on("ready", function(){
 	bot.user.setActivity("cz!help", { type: 'PLAYING' });
 	console.log(bot.user.username + " launched successfully");
@@ -41,8 +47,7 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 		
 		console.log("<1337> User", newState.member.user.username, "has connected to the", newState.channel.name, "channel");
 		
-		if(gacha(0.5))
-		{
+		if(gacha(0.5)) {
 			var voiceChannel = newState.member.voice.channel;
 			voiceChannel.join().then(connection => {
 				var playList = ['./lolkonfa1.secret.mp3', './lolkonfa2.secret.mp3'];
