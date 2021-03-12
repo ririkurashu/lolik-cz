@@ -9,18 +9,18 @@ const { Server } = require('http');
 let token = config.token;
 let prefix = config.prefix;
 
-function gacha(coeff){
+function gacha(coeff) {
     if(Math.random() < coeff) return 1;
     else return 0;
 }
 
-function getRdmInt(min, max){
+function getRdmInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 
-bot.on("ready", function(){
+bot.on("ready", function() {
 	bot.user.setActivity("cz!help", { type: 'PLAYING' });
 	console.log(bot.user.username + " launched successfully");
 	console.log("https://discord.com/api/oauth2/authorize?client_id=749320971890196600&permissions=3148800&scope=bot");
@@ -47,7 +47,7 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 		
 		console.log("<1337> User", newState.member.user.username, "has connected to the", newState.channel.name, "channel");
 		
-		if(gacha(0.5)) {
+		if(gacha(0.005)) {
 			var voiceChannel = newState.member.voice.channel;
 			voiceChannel.join().then(connection => {
 				var playList = ['./lolkonfa1.secret.mp3', './lolkonfa2.secret.mp3'];
