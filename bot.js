@@ -9,6 +9,11 @@ const { Server } = require('http');
 let token = config.token;
 let prefix = config.prefix;
 
+function gacha(coeff){
+    if(Math.random() < coeff) return 1;
+    else return 0;
+}
+
 bot.on("ready", function(){
 	bot.user.setActivity("cz!help", { type: 'PLAYING' });
 	console.log(bot.user.username + " launched successfully");
@@ -36,7 +41,16 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 		
 		console.log("<1337> User", newState.member.user.username, "has connected to the", newState.channel.name, "channel");
 		
-		tools.greeting(newState.member);
+		if(gacha(0.5))
+		{
+			var voiceChannel = newState.member.voice.channel;
+			voiceChannel.join().then(connection => {
+				var playList = ['./lolkonfa1.secret.mp3', './lolkonfa2.secret.mp3'];
+				const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
+				dispatcher.on('finish', () => voiceChannel.leave());
+			}).catch(err => console.log(err));
+		}
+		else tools.greeting(newState.member);
 
 		/*
 		if(newState.member.voice.channel.permissionsFor(newState.client.user).has("CONNECT") && newState.member.voice.channel.permissionsFor(newState.client.user).has("SPEAK")){
