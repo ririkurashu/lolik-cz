@@ -47,7 +47,7 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 		
 		console.log("<1337> User", newState.member.user.username, "has connected to the", newState.channel.name, "channel");
 		
-		if(gacha(0.005)) {
+		if(gacha(0.008)) {
 			var voiceChannel = newState.member.voice.channel;
 			voiceChannel.join().then(connection => {
 				var playList = ['./lolkonfa1.secret.mp3', './lolkonfa2.secret.mp3'];
