@@ -2,13 +2,13 @@ const config = require('./botconfig.json');
 const Discord = require('discord.js'); 
 const prefix = config.prefix;
 
-function getRdmInt(min, max){
+function getRdmInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function gacha(coeff){
+function gacha(coeff) {
     if(Math.random() < coeff) return 1;
     else return 0;
 }
@@ -38,15 +38,9 @@ module.exports = {
                 case "298158176824459265": // РоманГ
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        if(gacha(0.05)) {
-                            const dispatcher = connection.play('./brasilhomebox.secret.mp3');
-                            dispatcher.on('finish', () => voiceChannel.leave());
-                        }
-                        else {
-                            var playList = ['./blackbox.mp3', './brazil.mp3', './indihome.mp3', './romashki.mp3'];
-                            const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
-                            dispatcher.on('finish', () => voiceChannel.leave());
-                        }
+                        var playList = ['./kaspersky1.mp3', './kaspersky2.mp3', './kaspersky3.mp3'];
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
+                        dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
 
