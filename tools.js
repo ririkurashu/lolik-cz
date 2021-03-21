@@ -44,7 +44,7 @@ module.exports = {
                             dispatcher.on('finish', () => voiceChannel.leave());
                         }
                         else {
-                            const dispatcher = connection.play('./fart.mp3');
+                            const dispatcher = connection.play('./amongfart.mp3');
                             dispatcher.on('finish', () => voiceChannel.leave());
                         }
                     }).catch(err => console.log(err));
