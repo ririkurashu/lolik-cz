@@ -47,7 +47,7 @@ bot.on("voiceStateUpdate", async (oldState, newState) => {
 		
 		console.log("<1337> User", newState.member.user.username, "has connected to the", newState.channel.name, "channel");
 		
-		if(newState.channel.id = "752604715040374865") {
+		if(newState.channel.id == "752604715040374865") {
 			var voiceChannel = newState.member.voice.channel;
 			voiceChannel.join().then(connection => {
 				var playList = ['./amogus1.apr1.mp3', './amogus2.apr1.mp3', './amogus3.apr1.mp3'];
