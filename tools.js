@@ -20,33 +20,40 @@ module.exports = {
                 case "311230924031524865": // Марк
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        var playList = ['./yaebu.mp3', './waidmannsheil.mp3'];
-                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
-                        dispatcher.on('finish', () => voiceChannel.leave());
+                        if(gacha(0.1)) {
+                            var playList = ['./yaebu.apr1.secret.mp3', './waidmannsheil.apr1.secret.mp3', './jevachka.apr1.secret.mp3'];
+                            const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
+                            dispatcher.on('finish', () => voiceChannel.leave());
+                        }
+                        else {
+                            var playList = ['./yaebu.mp3', './waidmannsheil.mp3'];
+                            const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
+                            dispatcher.on('finish', () => voiceChannel.leave());
+                        }
                     }).catch(err => console.log(err));
                     break;
 
                 case "659824944275783701": // Марк 2
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        var playList = ['./jevachka.mp3', './waidmannsheil.mp3'];
-                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
-                        dispatcher.on('finish', () => voiceChannel.leave());
+                        if(gacha(0.1)) {
+                            var playList = ['./yaebu.apr1.secret.mp3', './waidmannsheil.apr1.secret.mp3', './jevachka.apr1.secret.mp3'];
+                            const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
+                            dispatcher.on('finish', () => voiceChannel.leave());
+                        }
+                        else {
+                            var playList = ['./yaebu.mp3', './waidmannsheil.mp3'];
+                            const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
+                            dispatcher.on('finish', () => voiceChannel.leave());
+                        }
                     }).catch(err => console.log(err));
                     break;
 
                 case "298158176824459265": // РоманГ
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        if(gacha(0.01)) {
-                            var playList = ['./kaspersky1.mp3', './kaspersky2.mp3', './kaspersky3.mp3'];
-                            const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
-                            dispatcher.on('finish', () => voiceChannel.leave());
-                        }
-                        else {
-                            const dispatcher = connection.play('./amongfart.mp3');
-                            dispatcher.on('finish', () => voiceChannel.leave());
-                        }
+                        const dispatcher = connection.play('./amongfartplus.mp3');
+                        dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
 
@@ -118,7 +125,7 @@ module.exports = {
                 case "643129279298928641": // я
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./despacitoelite.mp3');
+                        const dispatcher = connection.play('./supachatto.mp3');
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
