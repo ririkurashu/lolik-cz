@@ -29,16 +29,9 @@ module.exports = {
                 case "659824944275783701": // Марк 2
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        if(gacha(0.1)) {
-                            var playList = ['./yaebu.apr1.secret.mp3', './waidmannsheil.apr1.secret.mp3', './jevachka.apr1.secret.mp3'];
-                            const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
-                            dispatcher.on('finish', () => voiceChannel.leave());
-                        }
-                        else {
-                            var playList = ['./yaebu.mp3', './waidmannsheil.mp3'];
-                            const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
-                            dispatcher.on('finish', () => voiceChannel.leave());
-                        }
+                        var playList = ['./yaebu.mp3', './waidmannsheil.mp3'];
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
+                        dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
 
