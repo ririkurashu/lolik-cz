@@ -125,6 +125,15 @@ module.exports = {
                     }).catch(err => console.log(err));
                     break;
 
+                case "523193407041175554": // Вася
+                    var voiceChannel = mem.voice.channel;
+                    voiceChannel.join().then(connection => {
+                        var playList = ['./vreamyanaebenitsya.mp3', './cruzak200.mp3', './heavydirtysoul.mp3'];
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
+                        dispatcher.on('finish', () => voiceChannel.leave());
+                    }).catch(err => console.log(err));
+                    break;
+
                 case "643129279298928641": // я
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
