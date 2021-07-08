@@ -38,9 +38,16 @@ module.exports = {
                 case "298158176824459265": // РоманГ
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        if(gacha(0.2)) {
-                            const dispatcher = connection.play('./specialforpacani.mp3');
-                            dispatcher.on('finish', () => voiceChannel.leave());
+                        if(gacha(0.5)) {
+                            if(gacha(0.4)) {
+                                const dispatcher = connection.play('./specialforpacani.mp3');
+                                dispatcher.on('finish', () => voiceChannel.leave());
+                            }
+                            else
+                            {
+                                const dispatcher = connection.play('./svidetelkrinja.mp3');
+                                dispatcher.on('finish', () => voiceChannel.leave());
+                            }
                         }
                         else {
                             var playList = ['./tokyodiarrhea.mp3', './bangrare.mp3'];
