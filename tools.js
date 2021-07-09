@@ -14,9 +14,9 @@ function gacha(coeff) {
 }
 
 module.exports = {
-    greeting: function(mem){
-        if(mem.voice.channel.permissionsFor(mem.client.user).has("CONNECT") && mem.voice.channel.permissionsFor(mem.client.user).has("SPEAK")){
-            switch(mem.user.id){
+    greeting: function(mem) {
+        if(mem.voice.channel.permissionsFor(mem.client.user).has("CONNECT") && mem.voice.channel.permissionsFor(mem.client.user).has("SPEAK")) {
+            switch(mem.user.id) {
                 case "311230924031524865": // Марк
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
@@ -138,6 +138,9 @@ module.exports = {
                         const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
+                    break;
+
+                case "316991783194329090": // Керил
                     break;
 
                 case "643129279298928641": // я
