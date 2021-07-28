@@ -76,12 +76,12 @@ module.exports = {
                 case "704279535780233326": // РомиК
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./pekoecchi.secret.mp3');
+                        const dispatcher = connection.play('./pekocha.mp3');
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
                 
-                case "338635038583422977": // Аня Марк
+                case "338635038583422977": // Аня Мяужижа
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
                         const dispatcher = connection.play('./papich.mp3');
