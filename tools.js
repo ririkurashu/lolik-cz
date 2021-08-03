@@ -45,13 +45,13 @@ module.exports = {
                             }
                             else
                             {
-                                const dispatcher = connection.play('./svidetelkrinja.mp3');
+                                var playList = ['./tokyodiarrhea.mp3', './bangrare.mp3', './svidetelkrinja.mp3'];
+                                const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                                 dispatcher.on('finish', () => voiceChannel.leave());
                             }
                         }
                         else {
-                            var playList = ['./tokyodiarrhea.mp3', './bangrare.mp3'];
-                            const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
+                            const dispatcher = connection.play('./sniffthatone.mp3');
                             dispatcher.on('finish', () => voiceChannel.leave());
                         }
                     }).catch(err => console.log(err));
