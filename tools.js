@@ -100,7 +100,8 @@ module.exports = {
                 case "436212253058924555": // Аня Пашок
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./sugarcrush.mp3');
+                        var playList = ['./sugarcrush.mp3', './sukisukidaisuki.mp3'];
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
