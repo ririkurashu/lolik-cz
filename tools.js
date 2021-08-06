@@ -60,7 +60,8 @@ module.exports = {
                 case "295248007807369228": // Пашок
                     var voiceChannel = mem.voice.channel;
                     voiceChannel.join().then(connection => {
-                        const dispatcher = connection.play('./zvonitotec.mp3');
+                        var playList = ['./zvonitotec.mp3', './samosval.mp3'];
+                        const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
                         dispatcher.on('finish', () => voiceChannel.leave());
                     }).catch(err => console.log(err));
                     break;
