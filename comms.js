@@ -78,12 +78,24 @@ function tracklist (bot, mess, args) {
         mess.channel.send("Available music files:" + mp3files);
 }
 
+function tl (bot, mess, args) {
+        tracklist (bot, mess, args);
+}
+
+function add (bot, mess, args) {
+        if (mess.channel.type == "dm") {
+
+        }
+        else mess.channel.send("Let's not spam this channel and let no one interrupt us.\nSend me a direct message with this command!");
+}
 var comms_list = [
         {name: "stop", out: stop, about: "Stops the bot"},
         {name: "play", out: play, about: "Plays CumZone"},
         {name: "playme", out: playme, about: "Plays a personal greeting"},
         {name: "help", out: help, about: "Sends the help message"},
-        {name: "tracklist", out: tracklist, about: "Sends the tracklist"}
+        {name: "tracklist", out: tracklist, about: "Sends the tracklist"},
+        {name: "tl", out: tl, about: "Sends the tracklist"},
+        {name: "add", out: add, about: "Adds a new personal greeting"}
 ]
 
 module.exports.comms = comms_list;
