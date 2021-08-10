@@ -43,8 +43,9 @@ function play (bot, mess, args) {
                                 }
                         }
                 }
-                else mess.channel.send("For that command to work, you need to be in a voice chat.");
+                else mess.channel.send("For that command to work, you need to be in a voice channel.");
         }
+        else mess.channel.send("Unfortunately, this command doesn't seem to work here.\nTry typing it in a server text channel where I have permission to read it!");
 }
 
 function playme (bot, mess, args) {
@@ -54,6 +55,7 @@ function playme (bot, mess, args) {
                 }
                 else mess.channel.send("For that command to work, you need to be in a voice chat.");
         }
+        else mess.channel.send("Unfortunately, this command doesn't seem to work here.\nTry typing it in a server text channel where I have permission to read it!");
 }
 
 function help (bot, mess, args) {
