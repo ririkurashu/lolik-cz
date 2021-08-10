@@ -14,7 +14,7 @@ async function stop (bot, mess, args)
 }
 
 function play (bot, mess, args) {
-        if (mess.channel.type === "GUILD_TEXT") {
+        if (mess.channel.type == "GUILD_TEXT") {
                 if(mess.member.voice.channel) {
                         if(mess.member.voice.channel.permissionsFor(mess.member.client.user).has("CONNECT") && mess.member.voice.channel.permissionsFor(mess.member.client.user).has("SPEAK")){
                                 var voiceChannel = mess.member.voice.channel;
@@ -45,11 +45,11 @@ function play (bot, mess, args) {
                 }
                 else mess.channel.send("For that command to work, you need to be in a voice channel.");
         }
-        else mess.channel.send("Unfortunately, this command doesn't seem to work here.\nTry typing it in a server text channel where I have permission to read it!");
+        else mess.channel.send("Unfortunately, this command doesn't seem to work here."+mess.channel.type+"\nTry typing it in a server text channel where I have permission to read it!");
 }
 
 function playme (bot, mess, args) {
-        if (mess.channel.type === "GUILD_TEXT") {
+        if (mess.channel.type == "GUILD_TEXT") {
                 if(mess.member.voice.channel) {
                         tools.greeting(mess.member);
                 }
