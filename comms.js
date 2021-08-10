@@ -14,7 +14,7 @@ async function stop (bot, mess, args)
 }
 
 function play (bot, mess, args) {
-        if (message.channel.type == "GUILD_TEXT") {
+        if (mess.channel.type === "GUILD_TEXT") {
                 if(mess.member.voice.channel) {
                         if(mess.member.voice.channel.permissionsFor(mess.member.client.user).has("CONNECT") && mess.member.voice.channel.permissionsFor(mess.member.client.user).has("SPEAK")){
                                 var voiceChannel = mess.member.voice.channel;
@@ -49,7 +49,7 @@ function play (bot, mess, args) {
 }
 
 function playme (bot, mess, args) {
-        if (message.channel.type == "GUILD_TEXT") {
+        if (mess.channel.type === "GUILD_TEXT") {
                 if(mess.member.voice.channel) {
                         tools.greeting(mess.member);
                 }
