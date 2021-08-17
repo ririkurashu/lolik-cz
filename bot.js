@@ -43,7 +43,7 @@ bot.on("message", msg => {
 });
 
 bot.on("voiceStateUpdate", async (oldState, newState) => {
-	if(newState.member.user.username != bot.user.username && newState.member.user.discriminator != bot.user.discriminator && newState.channel != oldState.channel && newState.channel){
+	if(newState.member.user.username != bot.user.username && newState.member.user.discriminator != bot.user.discriminator && newState.channel != oldState.channel && newState.channel && !newState.member.user.bot){
 		
 		console.log("<1337> User", newState.member.user.username, "has connected to the", newState.channel.name, "channel");
 		
