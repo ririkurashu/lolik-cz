@@ -392,6 +392,12 @@ function dlt (bot, mess, args) {
                         return new Promise ((resolve, reject) => resolve()); 
                 }
                 catch (error) {
+                        let embed = new Discord.MessageEmbed()
+                                .setColor('#FFD800')
+                                .setTitle('Something went wrong during your file deletion')
+                                .setDescription("Please try again. If it keeps happening and you don't understand why, contact <@643129279298928641> for help.")
+                                .setThumbnail('https://lh3.googleusercontent.com/pw/AM-JKLUmOjIw2rX836oBzGOvftmUoCs6-YsdWt81LxpbJsw6WDbsf8oVBwmf3yBmASJVHuA_le1D5rfF3u4T-j6hU5yBY1GgNLGzv7QBSLcWJXt3desurGOoPTbl77nVzll8JdrRxrlFdEF_0q7ueC20T8F6=w249-h220-no');
+                        mess.channel.send(embed);
                         return new Promise ((resolve, reject) => reject(error)); 
                 }
         }
@@ -421,7 +427,12 @@ function dlt (bot, mess, args) {
                                                                 resolve(filename);
                                                         }
                                                         catch(error) { 
-                                                                mess.channel.send("Something went wrong during your file deletion. Please try again or contact <@643129279298928641> for help.");
+                                                                let embed = new Discord.MessageEmbed()
+                                                                        .setColor('#FFD800')
+                                                                        .setTitle('Something went wrong during your file deletion')
+                                                                        .setDescription("Please try again. If it keeps happening and you don't understand why, contact <@643129279298928641> for help.")
+                                                                        .setThumbnail('https://lh3.googleusercontent.com/pw/AM-JKLUmOjIw2rX836oBzGOvftmUoCs6-YsdWt81LxpbJsw6WDbsf8oVBwmf3yBmASJVHuA_le1D5rfF3u4T-j6hU5yBY1GgNLGzv7QBSLcWJXt3desurGOoPTbl77nVzll8JdrRxrlFdEF_0q7ueC20T8F6=w249-h220-no');
+                                                                mess.channel.send(embed);
                                                                 reject(`User ${mess.author.username} has tried to delete a file named ${filename} but something went wrong:\n${error}`); 
                                                         }
                                                 }
