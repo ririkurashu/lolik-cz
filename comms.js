@@ -92,7 +92,7 @@ function help (bot, mess, args) {
                         { name: 'c!tracklist', value: 'Shows the full list of mp3 track names' },
                         { name: 'c!mytl', value: 'Shows the list of your personal mp3 track names' }
                 )
-                .setThumbnail('https://psv4.userapi.com/c536436/u581197246/docs/d20/b0df614da02b/3a596f55-f8ba-4e20-973d-e55ba391a007.png?extra=JDFvnLYJLtYbDmGk4UvnfyLEMYm7j1-4KPPQJOVd421a0Yofqb6msE1FzioorUeSxydFVDinieboEOGORduhgxeuSskfIwHCuWK6dr13tEhIoxD9ZYZSepN6OETM2rlYhLVM8Pnt9saCTx94L0wbwoMUTg');
+                .setThumbnail('https://lh3.googleusercontent.com/pw/AM-JKLXEzTKb29OCSxvrjsqu1RY9_DTna6T9NluIXp7eXeyZ1uaurTPzVeuJdQSfJrrvC2sF5aj58GJ8NbduPm0ppSuL3PakkBvZaz17MsXtLo80Y5MVZQrUchaMAdzGgsnrmyuDKsmQvOyP7zhG24TRHVfT=s216-no');
         mess.channel.send(embed);
         //mess.channel.send("**Bot commands:**\n`c!play` — welcomes you to the cum zone.\n`c!play <trackname>` — plays a certain music file.
         //\n`c!tracklist` — shows the full list of mp3 track names.\n`c!playme` — plays your personal greeting.");
@@ -120,7 +120,7 @@ function tracklist (bot, mess, args) {
                         { name: '\u200B', value: mp3files.slice(third, third * 2), inline: true },
                         { name: '\u200B', value: mp3files.slice(third * 2), inline: true },
                 )
-                .setThumbnail('https://psv4.userapi.com/c534536/u581197246/docs/d49/171da3095e32/cumdanoff.png?extra=Q83v0Ce8VB0yWIxgoHnrionV2qhn5iiF--q5RMNkX5rJbHPg9eEeqd82ULnFxIHTNGYTLVesrTVb1wOD7T0YZKOJq9ZZDxguAnU9VDmI6BtRF2x7ll-67prhkKAXH6sqOW303rsrFslzT161FC8zDGP0wg');
+                .setThumbnail('https://lh3.googleusercontent.com/pw/AM-JKLVX4XmndLLx-5fkLnc4JfZZfhb4_YVv4SHSTxUOOVVnTycCe8kun5VAu_tymUD6eXG-o1qr2luVDZBZH_yYyfqv8E8K8Lmd2QxrpqNpWnGicezdN7BrEh8vlC41bJh_zh1MG0llAKUmgBQJCXBCdBkN=w296-h270-no');
         mess.channel.send(embed);
 }
 
@@ -136,7 +136,7 @@ function tlmy (bot, mess, args) {
                                 .setColor('#FFD800')
                                 .setTitle(mess.author.username + '\'s personal greeting files')
                                 .setDescription(files)
-                                .setThumbnail('https://psv4.userapi.com/c534536/u581197246/docs/d49/171da3095e32/cumdanoff.png?extra=Q83v0Ce8VB0yWIxgoHnrionV2qhn5iiF--q5RMNkX5rJbHPg9eEeqd82ULnFxIHTNGYTLVesrTVb1wOD7T0YZKOJq9ZZDxguAnU9VDmI6BtRF2x7ll-67prhkKAXH6sqOW303rsrFslzT161FC8zDGP0wg');
+                                .setThumbnail('https://lh3.googleusercontent.com/pw/AM-JKLVX4XmndLLx-5fkLnc4JfZZfhb4_YVv4SHSTxUOOVVnTycCe8kun5VAu_tymUD6eXG-o1qr2luVDZBZH_yYyfqv8E8K8Lmd2QxrpqNpWnGicezdN7BrEh8vlC41bJh_zh1MG0llAKUmgBQJCXBCdBkN=w296-h270-no');
                         mess.channel.send(embed);
                 }
                 else {
@@ -338,7 +338,7 @@ function add (bot, mess, args) {
                                         .setColor('#FFD800')
                                         .setTitle('Something went wrong during your file upload')
                                         .setDescription("Please try again. If it keeps happening and you don't understand why, contact <@643129279298928641> for help.")
-                                        .setThumbnail('https://psv4.userapi.com/c505536/u581197246/docs/d45/93460467c847/cumzoned.png?extra=cDRJDqudBiwpvcozFIX7WpbaPA_JOAkVu7RMdVE1fh4k5vn0ZT7qsItz_3hwqfG-ji7Zcq7Bj0wYXB-JBY-mttm0yXfOlcchEuoGL8BBugtfviFrZwtnn7UV89XxtizbrKnQO_M5N_5cThaslKfLtUsvPg');
+                                        .setThumbnail('https://lh3.googleusercontent.com/pw/AM-JKLUmOjIw2rX836oBzGOvftmUoCs6-YsdWt81LxpbJsw6WDbsf8oVBwmf3yBmASJVHuA_le1D5rfF3u4T-j6hU5yBY1GgNLGzv7QBSLcWJXt3desurGOoPTbl77nVzll8JdrRxrlFdEF_0q7ueC20T8F6=w249-h220-no');
                                 mess.channel.send(embed);
                         });
                 };
@@ -349,7 +349,7 @@ function add (bot, mess, args) {
                                 .setColor('#FFD800')
                                 .setTitle('Please send me a file you want to add to your greetings')
                                 .setDescription("While preparing the file, please note that:\n•  it must be in **.mp3** extension;\n•  it must be **512 KB** or less.\nOtherwise, the file won't be accepted.\nBesides that, it's also highly recommended that:\n•  the file duration be shorter than **10 seconds**;\n•  the file volume be under **12 dB** (as shown in the picture on the right).\nPlease respect yourself and the others. Even if you won't care enough to follow the recommendations above, and the server admin can't configure the bot directly, they can still ban it or you from the server.")
-                                .setThumbnail('https://psv4.userapi.com/c505536/u581197246/docs/d50/eaf09ad7d918/dhbdehdhdehddvzsdvfh.png?extra=9mYGw4TVrEAIRi2R2gweIjIryPbBmJnyeZ5eB2xmckxme9EO_Njp3mlyyl_nXyaiKRhfGwoPvf8_4idpBtVIUGUQgn9Xg7pNdEyfvHyPUCqbCcx16t_kLLPl6rA3mJSuoCncaiSjHYkHsi8Z6f-09vHVRw');
+                                .setThumbnail('https://lh3.googleusercontent.com/pw/AM-JKLWg9NRc93lE50rac7OaX70sMUhvWOAoLmslr7J4UYbteXpNKemTBNTlAQpKfFBXRATLLORVO3hOwpt-RO8auLW_Kj8Rdh6vkdU1hLWc29Os_k7XRJ7wVARvIxgvRmlz0tbJ0aYbAqBIcOYnYypfaLzc=w53-h68-no');
                         mess.channel.send(embed);
                         const filter = m => m.attachments.first();
                         mess.channel.awaitMessages( filter, { max: 1, time: 90000, errors: ['time'] })

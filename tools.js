@@ -54,6 +54,6 @@ module.exports = {
                 }).catch(err => console.log(err));
             }*/
         }
-        else console.log("The bot doesn't have a permission to join and/or speak in channel", mem.voice.channel.name, "on server", mem.guild.name, ".");
+        else console.log("The bot doesn't have a permission to join and/or speak in channel " + mem.voice.channel.name + " on server " + mem.guild.name + ".");
     }
 }
