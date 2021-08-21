@@ -83,14 +83,14 @@ function help (bot, mess, args) {
                         { name: 'c!play <trackname>', value: 'Plays a certain music file by its name' },
                         { name: 'c!playme', value: 'Plays one of your personal greetings' },
                         { name: 'c!tracklist', value: 'Shows the full list of mp3 track names' },
-                        { name: 'c!mytl', value: 'Shows the list of your personal mp3 track names' }
+                        { name: 'c!tlmy', value: 'Shows the list of your personal mp3 track names' }
                 )
                 .addField('\u200B', '**DM commands**')
                 .addFields(
                         { name: 'c!add', value: 'Adds a file to your personal greetings' },
                         { name: 'c!delete', value: 'Removes a file from your personal greetings' },
                         { name: 'c!tracklist', value: 'Shows the full list of mp3 track names' },
-                        { name: 'c!mytl', value: 'Shows the list of your personal mp3 track names' }
+                        { name: 'c!tlmy', value: 'Shows the list of your personal mp3 track names' }
                 )
                 .setThumbnail('https://lh3.googleusercontent.com/pw/AM-JKLXEzTKb29OCSxvrjsqu1RY9_DTna6T9NluIXp7eXeyZ1uaurTPzVeuJdQSfJrrvC2sF5aj58GJ8NbduPm0ppSuL3PakkBvZaz17MsXtLo80Y5MVZQrUchaMAdzGgsnrmyuDKsmQvOyP7zhG24TRHVfT=s216-no');
         mess.channel.send(embed);
