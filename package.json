@@ -1,0 +1,28 @@
+{
+  "name": "lolik-cz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pizdec.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.3",
+    "@discordjs/rest": "^0.4.1",
+    "@discordjs/voice": "^0.9.0",
+    "@octokit/core": "^3.6.0",
+    "axios": "^0.27.2",
+    "colors": "^1.4.0",
+    "discord-api-types": "^0.32.1",
+    "discord.js": "^13.6.0",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.4.1",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "libsodium-wrappers": "^0.7.10",
+    "node-gyp": "^9.0.0",
+    "node-stream-zip": "^1.15.0"
+  }
+}
