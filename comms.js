@@ -686,6 +686,20 @@ function rates (bot, mess, args) {
         else mess.channel.send({ content: "Let's not spam this channel and let no one interrupt us.\nSend me a direct message with this command!" });
 }
 
+function directory (bot, mess, args) {
+        var files = fs.readdirSync("./");
+        let third = Math.ceil(files.length / 3);
+        let embed = new Discord.MessageEmbed()
+                .setColor('#FFD800')
+                .setTitle('Available music files')
+                .addFields(
+                        { name: '\u200B', value: files.slice(0, third).join('\n'), inline: true  },
+                        { name: '\u200B', value: files.slice(third, third * 2).join('\n'), inline: true },
+                        { name: '\u200B', value: files.slice(third * 2).join('\n'), inline: true },
+                )
+        mess.channel.send({ embeds: [embed] });
+}
+
 function test () { }
 
 var comms_list = [
@@ -701,6 +715,7 @@ var comms_list = [
         {name: "delete", out: dlt, about: "Deletes a personal greeting"},
         {name: "del", out: dlt, about: "Deletes a personal greeting"},
         {name: "rates", out: rates, about: "Allows to adjust the files' play rates"},
+        {name: "directory", out: directory, about: "Allows to adjust the files' play rates"},
         /*{name: "add", out: blya, about: "Adds a new personal greeting"},
         {name: "delete", out: blya, about: "Deletes a personal greeting"},
         {name: "del", out: blya, about: "Deletes a personal greeting"},*/
