@@ -102,7 +102,6 @@ async function githubManualDeploy () {
                         fs.unlink("repo.zip", (err) => { 
                                 if (err) console.log(err);
                         });
-                        const bot = require('./bot.js'); 
                         console.log("Unzipped successfully.");
                 }
                 catch (e) { 
@@ -114,7 +113,10 @@ async function githubManualDeploy () {
                         catch (err) { console.log(err) }
                 }
                 finally {
-                        if (!errf) bot.botmain();
+                        if (!errf) {
+                                const bot = require('./bot.js'); 
+                                bot.botmain();
+                        }
                         else console.log("The bot couldn't start because there was an error shown abowe!");
                 }
 
