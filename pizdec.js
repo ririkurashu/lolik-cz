@@ -63,6 +63,7 @@ async function githubManualDeploy () {
                 repo: 'lolik-cz',
                 ref: 'master'
         });
+        console.log(result.url);
         const response = await Axios({
                 url: result.url,
                 method: 'GET',
