@@ -53,8 +53,6 @@ const ext = async (zip) => {
 */
 
 async function githubManualDeploy () {
-        let b = fs.readdirSync(__dirname);
-        console.log(b);
         console.log("Trying to manually deploy from GitHub...");
         //console.log(config.gitToken, typeof config.gitToken);
         const file = fs.createWriteStream("repo.zip");
