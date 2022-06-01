@@ -68,6 +68,7 @@ async function githubManualDeploy () {
         });
         response.data.pipe(file);
         file.on('close', async () => {
+                var errf = false;
                 try {
                         console.log("Zip successfully downloaded.")
                         file.close((err) => {
@@ -103,9 +104,19 @@ async function githubManualDeploy () {
                         });
                         const bot = require('./bot.js'); 
                         console.log("Unzipped successfully.");
-                        bot.botmain();
                 }
-                catch (e) { console.log("Zip processing error:", e) }
+                catch (e) { 
+                        console.log("Zip processing error:", e);
+                        errf = true;
+                        try {
+                                fs.unlinkSync("repo.zip");
+                        }
+                        catch (err) { console.log(err) }
+                }
+                finally {
+                        if (!errf) bot.botmain();
+                        else console.log("The bot couldn't start because there was an error shown abowe!");
+                }
 
                 /*
                 await ext ("./repo.zip").then(async () => {
