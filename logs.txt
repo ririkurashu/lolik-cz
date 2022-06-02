@@ -78,3 +78,4 @@
 [Wed, 01 Jun 2022 03:39:33 GMT]: User Moscal has DELETED the file named aaaaaaaaaaaaa.mp3
 [Wed, 01 Jun 2022 03:41:32 GMT]: User Moscal has ADDED the file named supa.secret.mp3
 [Wed, 01 Jun 2022 03:41:40 GMT]: User Moscal have adjusted their .mp3 rates: {"./supachatto.mp3":{},"./supa.secret.mp3":{"chance":0.05}}
+[Thu, 02 Jun 2022 18:56:30 GMT]: User Everlasting YOBA has ADDED the file named gmodanimatio.mp3
