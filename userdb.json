@@ -178,7 +178,9 @@
 	},
 	"316991783194329090": {
 		"username": "Ayacha",
-		"playlist": {}
+		"playlist": {
+			"./aioi.mp3": {}
+		}
 	},
 	"310862797414072322": {
 		"username": "K҉ E҉ N҉ N҉ Y",
