@@ -1,5 +1,7 @@
 # lolik-cz
-A small Discord bot that plays a short audio file when anyone joins a voice channel, basically a greeting bot. It's hosted on Heroku.
+A small Discord bot that plays a short audio file when anyone joins a voice channel, basically a greeting bot. It was September 2020, I just felt like adding one to my server, but couldn't find any, so here we are. The repo is kinda messy because of all these `.mp3`'s. I feel no shame about it. The real shame is in the code. Little you know, the actual cum zone it right there.
+
+Current release:
 
 # Cum Zone v2.1 - I had to do it to em
 This release was a necessary measure since there's a security issue between Heroku and GitHub, which made direct deploys from GitHub to Heroku impossible. 
@@ -19,3 +21,7 @@ Still got to do (probably not gonna happen):
 3. The bot's already been added to another server, and I still haven't reorganized the userdb in a way to hide the files of the other servers' users in tracklists. It's harder to come up with a solution to this than it seems, because a user can be present on multiple servers with this bot and all that. Maybe it's not needed at all, because it's kinda not fair if a file you upload gets rejected because there already is one with that name, but you haven't been able to see it.
 4. If the bot somehow gets added to a big number of servers and starts being used a lot (which is not happening for sure), it'll get me cornered, because I'll need to give up on Heroku and/or find a convenient cloud storage for all the userfiles, which has to be free because I'm totally not gonna pay for this. And I don't know such a service now, and also am too lazy to bother.
 5. Smooth and user-friendly files management, yeah. Definitely not through embeds though, I've researched on this topic, and can conclude that embeds are not omnipotent. They actually suck, if you ask me. Now a simple webpage sounds quite suited for this task, and it's even doable via Heroku if I remember correctly. But this implies authentification, and I don't know if it will be able to deal with DDoS or anything like that. Anyway, this one is the most likely to be done next, but it will make all the effort I've put into creating those bot commands worthless... and will make me write so much... I don't know.
+
+## My contacts
+
+If you want to discuss the greatness of my sweet child, or just feel kinda lonely on a friday night, text me on [Discord](https://discordapp.com/users/643129279298928641/) or [Telegram](https://t.me/lllliye).
