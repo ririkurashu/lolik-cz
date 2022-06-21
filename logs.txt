@@ -99,3 +99,4 @@
 [Thu, 09 Jun 2022 23:19:42 GMT]: User K҉ E҉ N҉ N҉ Y has DELETED the file named 123.mp3
 [Sun, 12 Jun 2022 13:30:13 GMT]: User т̶̛͊р̷̄͝е̷̓̄н̵̃͠е̴̑̓р̶͒̄ has DELETED the file named gmodanimation.mp.mp3
 [Sun, 12 Jun 2022 13:31:58 GMT]: User т̶̛͊р̷̄͝е̷̓̄н̵̃͠е̴̑̓р̶͒̄ has ADDED the file named yatrakhnuteb.mp3
+[Tue, 21 Jun 2022 12:06:42 GMT]: User salosmarmeladom has DELETED the file named samurai.mp3
