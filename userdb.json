@@ -127,7 +127,9 @@
 	},
 	"247416808334819331": {
 		"username": "sllollaryee",
-		"playlist": {}
+		"playlist": {
+			"./finger.mp3": {}
+		}
 	},
 	"148489922578219008": {
 		"username": "Maximillian",
