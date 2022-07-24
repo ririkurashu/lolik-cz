@@ -186,7 +186,8 @@
 		"username": "MOHAX",
 		"playlist": {
 			"./20036mp3ball.mp3": {},
-			"./.www.hotplay.mp3": {}
+			"./.www.hotplay.mp3": {},
+			"./...www.hotpl.mp3": {}
 		}
 	}
 }
