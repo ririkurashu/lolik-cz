@@ -5,7 +5,7 @@ Current release:
 
 # Cum Zone v2.1 - I had to do it to em
 This release was a necessary measure since there's a security issue between Heroku and GitHub, which made direct deploys from GitHub to Heroku impossible. 
-Now the app downloads its current version from this repo on start. The Heroku dyno restarts itself daily, deleting all the changes to the local filesystem, so this really had to be done. Even though the Heroku/GitHub incident is over already and the connection between these two services works again, I'm keeping the code as it is, because the bot used to redeploy its app and reboot after every single change made in its files by users, which sure sucked. I don't know for how long will this sussy code be working, but it seems to be doing fine for around 2 weeks now. It better be.
+Now the app downloads its current version from this repo on start. The Heroku dyno restarts itself daily, deleting all the changes to the local filesystem, so this really had to be done. Even though the Heroku/GitHub incident is over already and the connection between these two services works again, I'm keeping the code as it is, because the bot used to redeploy its app and reboot after every single change made in its files by users, which sure sucked. I don't know for how long will this sussy code be working, but it seems to be doing fine for around 2 months now. It better be.
 
 What else is new:
 - the randomization is back, and it comes with a new command. Users can type `c!rates` to adjust the chances of their files to be played, through some fancy embeds and really nasty code;
