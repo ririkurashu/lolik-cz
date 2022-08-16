@@ -86,61 +86,6 @@ const gitHubUpload = async (path, author) => {
 	}
 }
 
-// рандомный трек
-/*
-bot.on("voiceStateUpdate", async (oldState, newState) => {
-	if(newState.member.user.username != bot.user.username && newState.member.user.discriminator != bot.user.discriminator && newState.channel != oldState.channel && newState.channel && !newState.member.user.bot){
-		
-		console.log("<1337> User " + newState.member.user.username + " has connected to the channel " + newState.channel.name + " on server " + newState.member.guild.name + ".");
-
-		if(newState.member.user.id == "704279535780233326") {
-			var voiceChannel = newState.member.voice.channel;
-			voiceChannel.join().then(connection => {
-				const dispatcher = connection.play('./prank.secret.mp3');
-				dispatcher.on('finish', () => voiceChannel.leave());
-			}).catch(err => console.log(err));
-		}
-		else {
-			if(newState.guild.id == "656239793373446144") {
-				if(gacha(0.002)) {
-					var voiceChannel = newState.member.voice.channel;
-					voiceChannel.join().then(connection => {
-						var playList = ['./lolkonfa1.secret.mp3', './lolkonfa2.secret.mp3'];
-						const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
-						dispatcher.on('finish', () => voiceChannel.leave());
-					}).catch(err => console.log(err));
-				}
-				else {
-					try {
-						let mp3files = [];
-						fs.readdir("./", async (err, files) => {
-							for(i = 0; i < files.length; i++){
-								if(files[i].indexOf(".mp3") == -1 || files[i].indexOf(".mp3.sfk") > -1 || files[i].indexOf(".secret") > -1) {
-										files.splice(i, 1);
-										i--;
-								}
-								else {
-										mp3files.push("./" + files[i]);
-								}
-							}
-							var voiceChannel = newState.member.voice.channel;
-							voiceChannel.join().then(connection => {
-								const dispatcher = connection.play(mp3files[getRdmInt(0, mp3files.length)]);
-								dispatcher.on('finish', () => voiceChannel.leave());
-							}).catch(err => console.log(err));
-						});
-					}
-					catch (error) {
-						console.log(error); 
-					}
-				}
-			}
-			else tools.greeting(newState.member);
-		}
-	}
-})
-*/
-
 module.exports = {
 	botmain: async function () {
 		bot.on("ready", async () => {
