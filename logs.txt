@@ -148,3 +148,4 @@
 [Fri, 23 Sep 2022 13:09:33 GMT]: User Ayacha has DELETED the file named vihod.mp3
 [Fri, 23 Sep 2022 13:09:50 GMT]: User Ayacha has ADDED the file named vihod.mp3
 [Sun, 02 Oct 2022 16:44:41 GMT]: User Ayacha has ADDED the file named zadonbas.mp3
+[Fri, 07 Oct 2022 15:34:05 GMT]: User sirkis has DELETED the file named tutel.mp3
