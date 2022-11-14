@@ -167,3 +167,4 @@
 [Mon, 14 Nov 2022 13:03:50 GMT]: User Maximillian has ADDED the file named kateitshe2.mp3
 [Mon, 14 Nov 2022 13:28:40 GMT]: User Maximillian have adjusted their .mp3 rates: {"./dungeonmaster.mp.mp3":{"chance":0.1},"./bossinthisgym.mp.mp3":{"chance":0.1},"./kateitshe2.mp3":{}}
 [Mon, 14 Nov 2022 13:35:41 GMT]: User 1eMoN has ADDED the file named alyoblya.mp3
+[Mon, 14 Nov 2022 13:45:23 GMT]: User Maximillian has ADDED the file named nothinbutall.mp3
