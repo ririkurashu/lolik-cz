@@ -138,7 +138,9 @@
 	"148489922578219008": {
 		"username": "Maximillian",
 		"playlist": {
-			"./dungeonmaster.mp.mp3": {},
+			"./dungeonmaster.mp.mp3": {
+				"chance": 0.2
+			},
 			"./bossinthisgym.mp.mp3": {
 				"chance": 0.2
 			},
