@@ -170,3 +170,4 @@
 [Mon, 14 Nov 2022 13:45:23 GMT]: User Maximillian has ADDED the file named nothinbutall.mp3
 [Mon, 14 Nov 2022 13:46:00 GMT]: User Maximillian have adjusted their .mp3 rates: {"./dungeonmaster.mp.mp3":{"chance":0.1},"./bossinthisgym.mp.mp3":{"chance":0.1},"./kateitshe2.mp3":{"chance":0.2},"./nothinbutall.mp3":{}}
 [Tue, 15 Nov 2022 12:20:46 GMT]: User Maximillian has DELETED the file named dungeonmaster.mp.mp3
+[Tue, 15 Nov 2022 12:21:15 GMT]: User Maximillian has ADDED the file named malysh1.mp3
