@@ -1,5 +1,5 @@
 # Cum Zone bot - the one and only!
-A small Discord bot that plays a short audio file when anyone joins a voice channel, basically a greeting bot. It was September 2020, I just felt like adding one to my server, but couldn't find any, so here we are. The repo is kinda messy because of all these `.mp3`'s. I feel no shame about it. The real shame is in the code. Little you know, the actual cum zone it right there.
+A small Discord bot that plays a short audio file when anyone joins a voice channel, basically a greeting bot. It was September 2020, I just felt like adding one to my server, but couldn't find any, so here we are. The repo is kinda messy because of all these `.mp3`'s. I feel no shame about it. The real shame is in the code. Little you know, the actual cum zone is right there.
 
 Current release:
 
