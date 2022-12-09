@@ -182,3 +182,4 @@
 [Wed, 30 Nov 2022 19:23:43 GMT]: User Ayacha has ADDED the file named payapa.mp3
 [Fri, 09 Dec 2022 23:48:28 GMT]: User Moscal has DELETED the file named supa.secret.mp3
 [Fri, 09 Dec 2022 23:49:27 GMT]: User Moscal has ADDED the file named supa.secret.mp3
+[Fri, 09 Dec 2022 23:49:39 GMT]: User Moscal have adjusted their .mp3 rates: {"./supachatto.mp3":{},"./supa.secret.mp3":{"chance":0.05}}
