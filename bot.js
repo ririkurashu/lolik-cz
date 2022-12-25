@@ -290,7 +290,7 @@ module.exports = {
 				
 				console.log("<1337> User " + newState.member.user.username + " has connected to the channel " + newState.channel.name + " on server " + newState.member.guild.name + ".");
 				
-				if(newState.guild.id == "656239793373446144" && gacha(0.002)) {
+				if(newState.guild.id == "656239793373446144" && gacha(0.9)) {
 					tools.greetingRare(newState.member);
 				}
 				else tools.greeting(newState.member);
