@@ -292,11 +292,15 @@ module.exports = {
 				
 				if(newState.guild.id == "656239793373446144" && gacha(0.9)) {
 					var voiceChannel = newState.member.voice.channel;
-					voiceChannel.join().then(connection => {
-						var playList = ['./lolkonfa1.secret.mp3', './lolkonfa2.secret.mp3'];
-						const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
-						dispatcher.on('finish', () => voiceChannel.leave());
-					}).catch(err => console.log(err));
+					try{
+						voiceChannel.join().then(connection => {
+							var playList = ['./lolkonfa1.secret.mp3', './lolkonfa2.secret.mp3'];
+							const dispatcher = connection.play(playList[getRdmInt(0, playList.length)]);
+							dispatcher.on('finish', () => voiceChannel.leave());
+						}).catch(err => console.log(err));
+					} catch (e) {
+						console.log(e);
+					};
 				}
 					else tools.greeting(newState.member);
 			}
