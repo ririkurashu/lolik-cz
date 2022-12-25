@@ -141,7 +141,8 @@ module.exports = {
                     guildId: mem.voice.channel.guild.id,
                     adapterCreator: mem.voice.channel.guild.voiceAdapterCreator,
                 });
-                let playList = ['/padoru.mp3', '/lastchristmas.mp3', '/noviygod.mp3', '/noviyshoegaze.mp3', '/seinaruhinoinori.mp3', '/padoru_actual.mp3', '/mikujingle.mp3', '/mikumerrychristmas.mp3'];
+                let playList = ['/padoru.mp3', '/lastchristmas.mp3', '/noviygod.mp3', '/noviyshoegaze.mp3', '/seinaruhinoinori.mp3', '/padoru_actual.mp3', 
+                    '/mikujingle.mp3', '/mikumerrychristmas.mp3', '/alliwantforchristmas.mp3', '/happynewyear.mp3', '/sugarplumfairy.mp3', '/flowerwaltz.mp3'];
                 let resource = djsv.createAudioResource(__dirname + playList[getRdmInt(0, playList.length)]);
                 const player = djsv.createAudioPlayer();
                 connection.subscribe(player);
