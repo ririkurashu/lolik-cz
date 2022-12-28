@@ -136,15 +136,15 @@
 		"username": "Maximillian",
 		"playlist": {
 			"./bossinthisgym.mp.mp3": {
-				"chance": 0.05
-			},
-			"./kateitshe2.mp3": {
 				"chance": 0.2
 			},
+			"./kateitshe2.mp3": {},
 			"./nothinbutall.mp3": {
 				"chance": 0.2
 			},
-			"./malysh1.mp3": {}
+			"./malysh1.mp3": {
+				"chance": 0.2
+			}
 		}
 	},
 	"697157998786642002": {
