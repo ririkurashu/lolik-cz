@@ -4,6 +4,7 @@
   "description": "",
   "main": "pizdec.js",
   "scripts": {
+    "build": "npm install",
     "start": "node pizdec.js"
   },
   "author": "",
