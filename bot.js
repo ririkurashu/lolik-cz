@@ -313,7 +313,7 @@ module.exports = {
 				x = new Date();
 				let hoursDiff = x.getHours() + 3;
 				x.setHours(hoursDiff);
-				console.log(`[${x.toUTCString()}]: User ` + newState.member.user.username + " has connected to the channel " + newState.channel.name + " on server " + newState.member.guild.name + ".");
+				console.log(`[${x.toLocaleString()}]: User ` + newState.member.user.username + " has connected to the channel " + newState.channel.name + " on server " + newState.member.guild.name + ".");
 				
 				if(newState.guild.id == "656239793373446144" && gacha(0.002)) {
 					tools.greetingRare(newState.member);
