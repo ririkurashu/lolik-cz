@@ -103,23 +103,30 @@ module.exports = {
 				var messArr = comm.split(" ");
 				// reboot command (for me only!!!)
 				if(msg.author.id == "643129279298928641" && comm_name == "reboot") {
-					bot.get("/system/reboot", (req, res) => {
-						setTimeout(function () {
-							process.on("exit", function () {
-							  require("child_process")
-								.spawn(
-								  process.argv.shift(),
-								  process.argv,
-								  {
-									cwd: process.cwd(),
-									detached: true,
-									stdio: "inherit"
-								  }
-								);
-							});
-							process.exit();
-						}, 1000);
-					})
+					try{
+						bot.get("/system/reboot", (req, res) => {
+							setTimeout(function () {
+								process.on("exit", function () {
+								  require("child_process")
+									.spawn(
+									  process.argv.shift(),
+									  process.argv,
+									  {
+										cwd: process.cwd(),
+										detached: true,
+										stdio: "inherit"
+									  }
+									);
+								});
+								msg.channel.send({ content: "Resarting..." });
+								console.log("Resarting the bot...")
+								process.exit();
+							}, 1000);
+						})
+					}
+					catch (e) {
+						console.log("Error restarting the bot:\n", e);
+					}
 				}
 				else
 				// search for other commands
