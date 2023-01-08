@@ -101,33 +101,6 @@ module.exports = {
 				var comm = msg.content.replace(/\s+/g, ' ').trim() + " ";
 				var comm_name = comm.slice(0, comm.indexOf(" "));
 				var messArr = comm.split(" ");
-				// reboot command (for me only!!!)
-				if(msg.author.id == "643129279298928641" && comm_name == "c!restart") {
-					try{
-						msg.channel.send({ content: "Restarting..." });
-						console.log("Restarting the bot...")
-						setTimeout(function () {
-							process.on("exit", function () {
-								require("child_process")
-								.spawn(
-									process.argv.shift(),
-									process.argv,
-									{
-									cwd: process.cwd(),
-									detached: true,
-									stdio: "inherit"
-									}
-								);
-							});
-							process.exit();
-						}, 1000);
-					}
-					catch (e) {
-						console.log("Error restarting the bot:\n", e);
-					}
-				}
-				else
-				// search for other commands
 				for(i in comms.comms) {
 					var comm2 = prefix + comms.comms[i].name;
 					if(comm2 == comm_name){
