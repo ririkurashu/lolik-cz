@@ -104,25 +104,23 @@ module.exports = {
 				// reboot command (for me only!!!)
 				if(msg.author.id == "643129279298928641" && comm_name == "c!restart") {
 					try{
-						bot.get("/system/reboot", (req, res) => {
-							setTimeout(function () {
-								process.on("exit", function () {
-								  require("child_process")
-									.spawn(
-									  process.argv.shift(),
-									  process.argv,
-									  {
-										cwd: process.cwd(),
-										detached: true,
-										stdio: "inherit"
-									  }
-									);
-								});
-								msg.channel.send({ content: "Restarting..." });
-								console.log("Restarting the bot...")
-								process.exit();
-							}, 1000);
-						})
+						msg.channel.send({ content: "Restarting..." });
+						console.log("Restarting the bot...")
+						setTimeout(function () {
+							process.on("exit", function () {
+								require("child_process")
+								.spawn(
+									process.argv.shift(),
+									process.argv,
+									{
+									cwd: process.cwd(),
+									detached: true,
+									stdio: "inherit"
+									}
+								);
+							});
+							process.exit();
+						}, 1000);
 					}
 					catch (e) {
 						console.log("Error restarting the bot:\n", e);
