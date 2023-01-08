@@ -102,8 +102,7 @@ module.exports = {
 				var comm_name = comm.slice(0, comm.indexOf(" "));
 				var messArr = comm.split(" ");
 				// reboot command (for me only!!!)
-				console.log(`${comm_name}`);
-				if(msg.author.id == "643129279298928641" && comm_name == "reboot") {
+				if(msg.author.id == "643129279298928641" && comm_name == "c!restart") {
 					try{
 						bot.get("/system/reboot", (req, res) => {
 							setTimeout(function () {
@@ -119,8 +118,8 @@ module.exports = {
 									  }
 									);
 								});
-								msg.channel.send({ content: "Resarting..." });
-								console.log("Resarting the bot...")
+								msg.channel.send({ content: "Restarting..." });
+								console.log("Restarting the bot...")
 								process.exit();
 							}, 1000);
 						})
