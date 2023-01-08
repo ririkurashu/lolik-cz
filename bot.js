@@ -87,6 +87,7 @@ const gitHubUpload = async (path, author) => {
 }
 
 module.exports = {
+	// ugh
 	botmain: async function () {
 		bot.on("ready", async () => {
 			bot.user.setActivity("c!help", { type: 'PLAYING' });
@@ -94,14 +95,35 @@ module.exports = {
 			console.log("https://discord.com/api/oauth2/authorize?client_id=873969905710563358&permissions=3197952&scope=bot");
 		});
 
+		// commands handling
 		bot.on("messageCreate", msg => {
 			if(msg.author.username != bot.user.username && msg.author.discriminator != bot.user.discriminator && msg.content.slice(0, msg.content.indexOf("!") + 1) == prefix && msg.channel.id != "656239793373446144"){
 				var comm = msg.content.replace(/\s+/g, ' ').trim() + " ";
 				var comm_name = comm.slice(0, comm.indexOf(" "));
 				var messArr = comm.split(" ");
-		//		console.log(comm_name, "0000");
-		//		for(i = 0; i < messArr.length; i++) console.log(messArr[i]);
-				for(i in comms.comms){
+				// reboot command (for me only!!!)
+				if(msg.author.id == "643129279298928641" && comm_name == "reboot") {
+					bot.get("/system/reboot", (req, res) => {
+						setTimeout(function () {
+							process.on("exit", function () {
+							  require("child_process")
+								.spawn(
+								  process.argv.shift(),
+								  process.argv,
+								  {
+									cwd: process.cwd(),
+									detached: true,
+									stdio: "inherit"
+								  }
+								);
+							});
+							process.exit();
+						}, 1000);
+					})
+				}
+				else
+				// search for other commands
+				for(i in comms.comms) {
 					var comm2 = prefix + comms.comms[i].name;
 					if(comm2 == comm_name){
 						comms.comms[i].out(bot, msg, messArr);
@@ -285,16 +307,22 @@ module.exports = {
 			}
 		});
 
+		// this buddy's main job
 		bot.on("voiceStateUpdate", async (oldState, newState) => {
 			if(newState.member.user.username != bot.user.username && newState.member.user.discriminator != bot.user.discriminator && newState.channel != oldState.channel && newState.channel && !newState.member.user.bot){
+				x = new Date();
+				let hoursDiff = x.getHours() + 3;
+				x.setHours(hoursDiff);
+				console.log(`[${x.toUTCString()}]: User ` + newState.member.user.username + " has connected to the channel " + newState.channel.name + " on server " + newState.member.guild.name + ".");
 				
-				console.log("<1337> User " + newState.member.user.username + " has connected to the channel " + newState.channel.name + " on server " + newState.member.guild.name + ".");
-				
-				if(newState.guild.id == "656239793373446144") {
-					if (gacha(0.002)) tools.greetingRare(newState.member);
-					else tools.greetingXmas(newState.member);
+				if(newState.guild.id == "656239793373446144" && gacha(0.002)) {
+					tools.greetingRare(newState.member);
 				}
-				else tools.greeting(newState.member);
+				else {
+					var quasoMems = ["643129279298928641", "311230924031524865", "283675195401830412", "298158176824459265"];
+					if (quasoMems.includes(newState.member.user.id)) tools.greetingQuaso(newState.member);
+					else tools.greeting(newState.member);
+				}
 			}
 		})
 

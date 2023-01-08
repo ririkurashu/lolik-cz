@@ -133,7 +133,7 @@ module.exports = {
         }
         else console.log("The bot doesn't have a permission to join and/or speak in channel " + mem.voice.channel.name + " on server " + mem.guild.name + ".");
     },
-    greetingXmas: function (mem) {
+    greetingQuaso: function (mem) {
         if(mem.voice.channel.permissionsFor(mem.client.user).has("CONNECT") && mem.voice.channel.permissionsFor(mem.client.user).has("SPEAK")) {
             try {
                 const connection = djsv.joinVoiceChannel({
@@ -141,8 +141,7 @@ module.exports = {
                     guildId: mem.voice.channel.guild.id,
                     adapterCreator: mem.voice.channel.guild.voiceAdapterCreator,
                 });
-                let playList = ['/padoru.mp3', '/lastchristmas.mp3', '/noviygod.mp3', '/noviyshoegaze.mp3', '/seinaruhinoinori.mp3', '/padoru_actual.mp3', 
-                    '/mikujingle.mp3', '/mikumerrychristmas.mp3', '/alliwantforchristmas.mp3', '/happynewyear.mp3', '/sugarplumfairy.mp3', '/flowerwaltz.mp3'];
+                let playList = ['/quaso1.mp3', '/quaso2.mp3', '/quaso3.mp3'];
                 let resource = djsv.createAudioResource(__dirname + playList[getRdmInt(0, playList.length)]);
                 const player = djsv.createAudioPlayer();
                 connection.subscribe(player);
