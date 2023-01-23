@@ -31,9 +31,7 @@
 	},
 	"704279535780233326": {
 		"username": "RomanK322",
-		"playlist": {
-			"./padoru.mp3": {}
-		}
+		"playlist": {}
 	},
 	"338635038583422977": {
 		"username": "",
@@ -206,6 +204,12 @@
 		"username": "1eMoN",
 		"playlist": {
 			"./alyoblya.mp3": {}
+		}
+	},
+	"1009932755028693002": {
+		"username": "FizzBuzz",
+		"playlist": {
+			"./dimooon.mp3": {}
 		}
 	}
 }
