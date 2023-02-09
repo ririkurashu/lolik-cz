@@ -133,12 +133,16 @@
 	"148489922578219008": {
 		"username": "Maximillian",
 		"playlist": {
-			"./chessf.mp3": {},
-			"./chessg.mp3": {},
-			"./chessp.mp3": {
+			"./chessf.mp3": {
 				"chance": 0.2
 			},
-			"./chesss.mp3": {}
+			"./chessg.mp3": {
+				"chance": 0.2
+			},
+			"./chessp.mp3": {},
+			"./chesss.mp3": {
+				"chance": 0.2
+			}
 		}
 	},
 	"697157998786642002": {
