@@ -202,3 +202,4 @@
 [Thu, 09 Feb 2023 14:28:42 GMT]: User Maximillian has ADDED the file named chessp.mp3
 [Thu, 09 Feb 2023 14:28:52 GMT]: User Maximillian has ADDED the file named chesss.mp3
 [Thu, 09 Feb 2023 14:30:03 GMT]: User Maximillian have adjusted their .mp3 rates: {"./chessf.mp3":{},"./chessg.mp3":{},"./chessp.mp3":{"chance":0.2},"./chesss.mp3":{}}
+[Thu, 09 Feb 2023 14:30:40 GMT]: User Maximillian have adjusted their .mp3 rates: {"./chessf.mp3":{"chance":0.2},"./chessg.mp3":{"chance":0.2},"./chessp.mp3":{},"./chesss.mp3":{"chance":0.2}}
