@@ -132,7 +132,9 @@
 	},
 	"148489922578219008": {
 		"username": "Maximillian",
-		"playlist": {}
+		"playlist": {
+			"./chessf.mp3": {}
+		}
 	},
 	"697157998786642002": {
 		"username": "eviiistel",
