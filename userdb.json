@@ -135,7 +135,9 @@
 		"playlist": {
 			"./chessf.mp3": {},
 			"./chessg.mp3": {},
-			"./chessp.mp3": {},
+			"./chessp.mp3": {
+				"chance": 0.2
+			},
 			"./chesss.mp3": {}
 		}
 	},
