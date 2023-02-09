@@ -133,13 +133,8 @@
 	"148489922578219008": {
 		"username": "Maximillian",
 		"playlist": {
-			"./kateitshe2.mp3": {},
-			"./nothinbutall.mp3": {
-				"chance": 0.2
-			},
-			"./malysh1.mp3": {
-				"chance": 0.2
-			}
+			"./nothinbutall.mp3": {},
+			"./malysh1.mp3": {}
 		}
 	},
 	"697157998786642002": {
