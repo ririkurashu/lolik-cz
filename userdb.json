@@ -45,9 +45,6 @@
 			"./tranziponemp3cut.mp3": {
 				"chance": 0.02
 			},
-			"./hruk.mp3": {
-				"chance": 0.02
-			},
 			"./svinorez.mp3": {}
 		}
 	},
