@@ -206,3 +206,4 @@
 [Wed, 15 Feb 2023 16:11:26 GMT]: User licholase have adjusted their .mp3 rates: {"./tranziponemp3cut.mp3":{"chance":0.02},"./donbas.mp3":{"chance":0.02},"./hruk.mp3":{"chance":0.02},"./svinorez.mp3":{}}
 [Wed, 15 Feb 2023 16:15:58 GMT]: User licholase has DELETED the file named donbas.mp3
 [Wed, 15 Feb 2023 16:16:15 GMT]: User licholase has DELETED the file named hruk.mp3
+[Wed, 15 Feb 2023 16:16:26 GMT]: User licholase has DELETED the file named svinorez.mp3
