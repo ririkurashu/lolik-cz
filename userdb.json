@@ -42,9 +42,15 @@
 	"239101440256245762": {
 		"username": "licholase",
 		"playlist": {
-			"./tranziponemp3cut.mp3": {},
-			"./donbas.mp3": {},
-			"./hruk.mp3": {},
+			"./tranziponemp3cut.mp3": {
+				"chance": 0.02
+			},
+			"./donbas.mp3": {
+				"chance": 0.02
+			},
+			"./hruk.mp3": {
+				"chance": 0.02
+			},
 			"./svinorez.mp3": {}
 		}
 	},
