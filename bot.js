@@ -38,6 +38,13 @@ function getRdmInt(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function quasoNameCheck(username) {
+	username = username.toLowerCase();
+	if (username.startsWith('qua') || username.endsWith('aso')) return 1;
+	else if (username.endsWith('асо') || username.startsWith('куа') || username.startsWith('ква')) return 1;
+	else return 0;
+}
+
 const gitHubUpload = async (path, author) => {
 	try {
 		let content = fs.readFileSync(path, 'base64');
@@ -297,8 +304,8 @@ module.exports = {
 					tools.greetingRare(newState.member);
 				}
 				else {
-					var quasoMems = ["643129279298928641", "311230924031524865", "283675195401830412", "298158176824459265"];
-					if (quasoMems.includes(newState.member.user.id)) tools.greetingQuaso(newState.member);
+					//var quasoMems = ["643129279298928641", "311230924031524865", "283675195401830412", "298158176824459265"];
+					if (quasoNameCheck(newState.member.user.username)) tools.greetingQuaso(newState.member);
 					else tools.greeting(newState.member);
 				}
 			}
