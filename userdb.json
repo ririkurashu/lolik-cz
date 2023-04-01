@@ -152,8 +152,12 @@
 		"username": "Everlasting YOBA",
 		"playlist": {
 			"./ricefields.mp3": {},
-			"./asswecan2.mp3": {},
-			"./gmodanimatio.mp3": {}
+			"./asswecan2.mp3": {
+				"chance": 0.2
+			},
+			"./gmodanimatio.mp3": {
+				"chance": 0.2
+			}
 		}
 	},
 	"270163838605721602": {
