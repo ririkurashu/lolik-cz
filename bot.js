@@ -304,9 +304,12 @@ module.exports = {
 					tools.greetingRare(newState.member);
 				}
 				else {
+					tools.greetingAprilFools(newState.member);
+					/*
 					//var quasoMems = ["643129279298928641", "311230924031524865", "283675195401830412", "298158176824459265"];
 					if (quasoNameCheck(newState.member.displayName)) tools.greetingQuaso(newState.member);
 					else tools.greeting(newState.member);
+					*/
 				}
 			}
 		})
