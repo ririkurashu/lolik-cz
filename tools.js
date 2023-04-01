@@ -156,28 +156,5 @@ module.exports = {
             catch (e) { console.log(e) };
         }
         else console.log("The bot doesn't have a permission to join and/or speak in channel " + mem.voice.channel.name + " on server " + mem.guild.name + ".");
-    },
-    greetingAprilFools: function (mem) {
-        if(mem.voice.channel.permissionsFor(mem.client.user).has("CONNECT") && mem.voice.channel.permissionsFor(mem.client.user).has("SPEAK")) {
-            try {
-                const connection = djsv.joinVoiceChannel({
-                    channelId: mem.voice.channelId,
-                    guildId: mem.voice.channel.guild.id,
-                    adapterCreator: mem.voice.channel.guild.voiceAdapterCreator,
-                });
-                let resource = djsv.createAudioResource(__dirname + '/pipe.secret.mp3');
-                const player = djsv.createAudioPlayer();
-                connection.subscribe(player);
-                player.play(resource);
-                player.on(djsv.AudioPlayerStatus.Idle, () => {
-                    connection.destroy();
-                });
-                player.on('error', error => {
-                    console.error(error);
-                });
-            }
-            catch (e) { console.log(e) };
-        }
-        else console.log("The bot doesn't have a permission to join and/or speak in channel " + mem.voice.channel.name + " on server " + mem.guild.name + ".");
     }
 }

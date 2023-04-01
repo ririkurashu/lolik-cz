@@ -300,16 +300,13 @@ module.exports = {
 				x.setHours(hoursDiff);
 				console.log(`[${x.toLocaleString()}]: User ` + newState.member.user.username + " has connected to the channel " + newState.channel.name + " on server " + newState.member.guild.name + ".");
 				
-				if(newState.guild.id == "656239793373446144" && gacha(0.002)) {
+				if(newState.guild.id == "656239793373446144" && gacha(0.001)) {
 					tools.greetingRare(newState.member);
 				}
 				else {
-					tools.greetingAprilFools(newState.member);
-					/*
 					//var quasoMems = ["643129279298928641", "311230924031524865", "283675195401830412", "298158176824459265"];
 					if (quasoNameCheck(newState.member.displayName)) tools.greetingQuaso(newState.member);
 					else tools.greeting(newState.member);
-					*/
 				}
 			}
 		})
