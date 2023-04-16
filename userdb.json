@@ -31,7 +31,9 @@
 	},
 	"704279535780233326": {
 		"username": "RomanK322",
-		"playlist": {}
+		"playlist": {
+			"./suichan.mp3": {}
+		}
 	},
 	"338635038583422977": {
 		"username": "",
