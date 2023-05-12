@@ -43,7 +43,9 @@
 	},
 	"239101440256245762": {
 		"username": "licholase",
-		"playlist": {}
+		"playlist": {
+			"./allah.mp3": {}
+		}
 	},
 	"436212253058924555": {
 		"username": "",
