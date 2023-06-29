@@ -141,7 +141,7 @@ module.exports = {
                     guildId: mem.voice.channel.guild.id,
                     adapterCreator: mem.voice.channel.guild.voiceAdapterCreator,
                 });
-                let resource = djsv.createAudioResource(__dirname + "aooaa.mp3");
+                let resource = djsv.createAudioResource(__dirname + "/aooaa.mp3");
                 const player = djsv.createAudioPlayer();
                 connection.subscribe(player);
                 player.play(resource);
