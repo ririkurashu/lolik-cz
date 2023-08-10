@@ -83,9 +83,10 @@
 		}
 	},
 	"643129279298928641": {
-		"username": "Moscal",
+		"username": "moscal",
 		"playlist": {
-			"./mladenec.mp3": {}
+			"./mladenec.mp3": {},
+			"./detey.mp3": {}
 		}
 	},
 	"369835944452292609": {
