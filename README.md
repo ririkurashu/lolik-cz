@@ -24,4 +24,4 @@ Still got to do (probably not gonna happen):
 
 ## My contacts
 
-If you want to discuss the greatness of my sweet child, or just feel kinda lonely on a friday night, text me on [Discord](https://discordapp.com/users/643129279298928641/) or [Telegram](https://t.me/lllliye).
+If you want to discuss the greatness of my sweet child, or just feel kinda lonely on a friday night, text me on [Discord](https://discordapp.com/users/643129279298928641/).
