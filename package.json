@@ -25,5 +25,8 @@
     "libsodium-wrappers": "^0.7.10",
     "node-gyp": "^9.0.0",
     "node-stream-zip": "^1.15.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
