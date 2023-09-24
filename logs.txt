@@ -238,3 +238,4 @@
 [Thu, 10 Aug 2023 19:15:36 GMT]: User moscal has ADDED the file named detey.mp3
 [Thu, 24 Aug 2023 14:47:22 GMT]: User moscal has ADDED the file named detey2.mp3
 [Thu, 24 Aug 2023 14:47:53 GMT]: User moscal has DELETED the file named detey.mp3
+[Sun, 24 Sep 2023 21:33:51 GMT]: User moscal has DELETED the file named mladenec.mp3
