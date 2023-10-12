@@ -83,14 +83,14 @@
 		}
 	},
 	"643129279298928641": {
-    		"username": "Moscal",
-    		"playlist": {
-	      		"./supachatto.mp3": {},
-	      		"./supa.secret.mp3": {
-	        		"chance": 0.05
-      			}
-    		}
-  	},
+		"username": "Moscal",
+		"playlist": {
+			"./supachatto.mp3": {},
+			"./supa.secret.mp3": {
+				"chance": 0.05
+			}
+		}
+	},
 	"369835944452292609": {
 		"username": "",
 		"playlist": {
@@ -151,11 +151,12 @@
 		}
 	},
 	"211853124455890944": {
-		"username": "Everlasting YOBA",
+		"username": "everlastingyoba",
 		"playlist": {
 			"./ricefields.mp3": {},
 			"./asswecan2.mp3": {},
-			"./gmodanimatio.mp3": {}
+			"./gmodanimatio.mp3": {},
+			"./mgeoldgamest.mp3": {}
 		}
 	},
 	"270163838605721602": {
