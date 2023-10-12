@@ -153,13 +153,8 @@
 	"211853124455890944": {
 		"username": "everlastingyoba",
 		"playlist": {
-			"./ricefields.mp3": {
-				"chance": 0.2
-			},
-			"./gmodanimatio.mp3": {},
-			"./mgestatus.mp3": {
-				"chance": 0.2
-			}
+			"./ricefields.mp3": {},
+			"./mgestatus.mp3": {}
 		}
 	},
 	"270163838605721602": {
