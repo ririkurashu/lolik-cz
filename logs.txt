@@ -241,3 +241,4 @@
 [Sun, 24 Sep 2023 21:33:51 GMT]: User moscal has DELETED the file named mladenec.mp3
 [Sun, 24 Sep 2023 21:34:00 GMT]: User moscal has DELETED the file named detey2.mp3
 [Thu, 12 Oct 2023 03:00:16 GMT]: User everlastingyoba has ADDED the file named mgeoldgamest.mp3
+[Thu, 12 Oct 2023 03:02:43 GMT]: User everlastingyoba have adjusted their .mp3 rates: {"./ricefields.mp3":{},"./asswecan2.mp3":{},"./gmodanimatio.mp3":{},"./mgeoldgamest.mp3":{"chance":0.2}}
