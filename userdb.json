@@ -154,9 +154,7 @@
 		"username": "everlastingyoba",
 		"playlist": {
 			"./ricefields.mp3": {},
-			"./mgestatus.mp3": {
-				"chance": 0.2
-			}
+			"./mgestatus.mp3": {}
 		}
 	},
 	"270163838605721602": {
