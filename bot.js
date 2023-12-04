@@ -289,7 +289,7 @@ module.exports = {
 		bot.on("voiceStateUpdate", async (oldState, newState) => {
 			if(newState.member.user.username != bot.user.username && newState.member.user.discriminator != bot.user.discriminator && newState.channel != oldState.channel && newState.channel && !newState.member.user.bot){
 				x = new Date();
-				let hoursDiff = x.getHours() + 3;
+				let hoursDiff = x.getHours()/* + 3*/;
 				x.setHours(hoursDiff);
 				console.log(`[${x.toLocaleString()}]: User ` + newState.member.user.username + " has connected to the channel " + newState.channel.name + " on server " + newState.member.guild.name + ".");
 				
