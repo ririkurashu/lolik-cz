@@ -86,12 +86,13 @@
 		}
 	},
 	"643129279298928641": {
-		"username": "Moscal",
+		"username": "moscal",
 		"playlist": {
 			"./supachatto.mp3": {},
 			"./supa.secret.mp3": {
 				"chance": 0.05
-			}
+			},
+			"./kaspersky1.mp3": {}
 		}
 	},
 	"369835944452292609": {
