@@ -34,7 +34,9 @@
 	},
 	"704279535780233326": {
 		"username": "romank322",
-		"playlist": {}
+		"playlist": {
+			"./padoru.mp3": {}
+		}
 	},
 	"338635038583422977": {
 		"username": "",
