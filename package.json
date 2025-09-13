@@ -1,13 +1,14 @@
 {
   "name": "lolik-cz",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.1.250913",
+  "type": "module",
+  "description": "A Discord bot that plays a short audio file when anyone joins a voice channel, basically a greeting bot.",
   "main": "pizdec.js",
   "scripts": {
     "build": "npm install",
     "start": "node pizdec.js"
   },
-  "author": "",
+  "author": "ririkurashu",
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.10.0",
