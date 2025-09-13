@@ -1,40 +1,32 @@
-//import config from './botconfig.json'; 
-//import aws from 'aws-sdk';
+//const config = require('./botconfig.json'); 
+//const aws = require('aws-sdk');
 let config = {
 	botToken: process.env.REACT_APP_BOT_TOKEN, // i genuinely hate heroku at this point
 	gitToken: process.env.REACT_APP_GIT_TOKEN,
 	prefix: "c!"
 };
-import fs from 'fs';
-import { Octokit } from '@octokit/core';
+const fs = require('fs');
+const { Octokit } = require ('@octokit/core');
 
-import Axios from 'axios';
-//import extract from 'extract-zip'
-//import mv from 'mv';
-import StreamZip from 'node-stream-zip';
+const Axios = require('axios');
+//const extract = require('extract-zip')
+//const mv = require('mv');
+const StreamZip = require('node-stream-zip');
 
-//import { move } from 'fs-extra';
+//const { move } = require('fs-extra');
 
 const octokit = new Octokit({
         auth: config.gitToken
 });
 
-//import { promises: { readdir } } from 'fs'
-
-import bot from './bot.js'; 
-
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+//const { promises: { readdir } } = require('fs')
 
 /*
 const getDirs = async (source) => {
         let dirs = fs.readdirSync(source, { withFileTypes: true });
         //console.log("1.", dirs);
         //let contents = [];
-        for (let i = 0; i < dirs.length; i++) {
+        for (i = 0; i < dirs.length; i++) {
                 if ((dirs[i].name.endsWith(".mp3") || dirs[i].name.endsWith(".js") || dirs[i].name.endsWith(".json"))) {
                         //contents.push(dirs[i].name);
                         try { 
@@ -84,7 +76,7 @@ async function githubManualDeploy () {
                         });
 
                         let d = fs.readdirSync(__dirname);
-                        for (let i = 0; i < d.length; i++) {
+                        for (i = 0; i < d.length; i++) {
                                 if (d[i].endsWith(".mp3")) {
                                         //contents.push(d[i]);
                                         try { 
@@ -122,6 +114,7 @@ async function githubManualDeploy () {
                 }
                 finally {
                         if (!errf) {
+                                const bot = require('./bot.js'); 
                                 bot.botmain();
                         }
                         else console.log("The bot couldn't start because there was an error shown abowe!");
@@ -132,14 +125,14 @@ async function githubManualDeploy () {
                         await getDirs(__dirname).then(async (folders) => {
                                 //console.log("2.", folders);
                                 var path = "";
-                                for (let i = 0; i < folders.length; i++) {
+                                for (i = 0; i < folders.length; i++) {
                                         if (folders[i].indexOf("ririkurashu-lolik-cz") > -1) {
                                                 path = __dirname + "/" + folders[i];
                                                 break;
                                         } 
                                 }
                                 let d = fs.readdirSync(path);
-                                for (let i = 0; i < d.length; i++) {
+                                for (i = 0; i < d.length; i++) {
                                         //if (!d[i].name.endsWith(".mp3") && d[i].name != "userdb.json") {
                                                 //contents.push(dirs[i].name);
                                                 try { 
@@ -154,7 +147,8 @@ async function githubManualDeploy () {
                                                 if (err) {
                                                         console.log("Mv error:", err);
                                                 }
-                                                else { 
+                                                else {
+                                                        const bot = require('./bot.js'); 
                                                         console.log("Mv success");
                                                         bot.botmain();
                                                 }
@@ -166,15 +160,15 @@ async function githubManualDeploy () {
                 });
                 */
         });
-        file.on('error', async (err) => {
+        file.on('error', async () => {
                 fs.unlink("repo.zip", (e => {
-                        if (e) console.error("Failed to write .zip file from GitHub:", e);
+                        if (e) console.error("Failed to write .zip file frim GitHub:", e);
                 }));
-                console.error("Failed to write .zip file from GitHub:", err);
+                console.error("Failed to write .zipffile frim GitHub:", err);
         });
 }
 
 githubManualDeploy();
 
-//import bot from './bot.js'; 
+//const bot = require('./bot.js'); 
 //bot.botmain();

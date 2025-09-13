@@ -1,31 +1,25 @@
-//import config from './botconfig.json';
-//import aws from 'aws-sdk';
+//const config = require('./botconfig.json');
+//const aws = require('aws-sdk');
 let config = {
 	botToken: process.env.REACT_APP_BOT_TOKEN,
 	gitToken: process.env.REACT_APP_GIT_TOKEN,
 	prefix: "c!"
 };
-import tools from "./tools.js";
-import fs from 'fs';
-import userdb from './userdb.json' assert { type: "json" };
-import Discord from 'discord.js'; 
-import * as djsv from '@discordjs/voice';
+const tools = require("./tools.js");
+const fs = require('fs');
+const userdb = require('./userdb.json');
+const Discord = require('discord.js'); 
+const djsv = require('@discordjs/voice');
 const prefix = config.prefix;
 let token = config.gitToken;
 
-import Axios from 'axios';
-import colors from 'colors';
-import { Octokit } from '@octokit/core';
+const Axios = require('axios');
+const colors = require('colors');
+const { Octokit } = require ('@octokit/core');
 
 const octokit = new Octokit({
         auth: token
 });
-
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 async function stop (bot, mess, args) 
 {
@@ -44,7 +38,7 @@ function play (bot, mess, args) {
                                 if(args[1]) {
                                         if (args[1].endsWith('.mp3')) args[1] = args[1].slice(0, args[1].lastIndexOf(".mp3"));
                                         var files = fs.readdirSync("./");
-                                        for(let i = 0; i < files.length; i++) {
+                                        for(i = 0; i < files.length; i++) {
                                                 if(files[i].indexOf(".mp3") == -1 || files[i].indexOf(".mp3.sfk") > -1) {
                                                         files.splice(i, 1);
                                                         i--;
@@ -141,7 +135,7 @@ function help (bot, mess, args) {
 function tracklist (bot, mess, args) {
         let mp3files = [];
         var files = fs.readdirSync("./");
-        for(let i = 0; i < files.length; i++){
+        for(i = 0; i < files.length; i++){
                 if(files[i].indexOf(".mp3") == -1 || files[i].indexOf(".mp3.sfk") > -1 || files[i].indexOf(".secret") > -1) {
                         files.splice(i, 1);
                         i--;
@@ -165,15 +159,16 @@ function tracklist (bot, mess, args) {
 }
 
 function tlmy (bot, mess, args) {
-        const userdb = fs.readFileSync('./userdb.json', 'utf8');
+        delete require.cache [ require.resolve('./userdb.json') ];
+        const userdb = require('./userdb.json');
         if (mess.author.id in userdb) {
                 if (userdb[mess.author.id].username != mess.author.username) userdb[mess.author.id].username = mess.author.username;
                 if (Object.keys(userdb[mess.author.id].playlist).length > 0) {
-                        let files = Object.keys(userdb[mess.author.id].playlist).slice();
+                        files = Object.keys(userdb[mess.author.id].playlist).slice();
                         var list = "";
                         var rates = "";
                         var secret = 0;
-                        for (let i = 0; i < files.length; i++) {
+                        for (i = 0; i < files.length; i++) {
                                 if(files[i].endsWith(".secret.mp3") && mess.channel.type != "DM") secret++;
                                 else {
                                         list += files[i].slice(2) + "\n";
@@ -240,10 +235,10 @@ const gitHubUpload = async (path, mess) => {
                 try {
                         fs.unlinkSync(path);
                         delete userdb[mess.author.id].playlist[path];
-                        let json = JSON.stringify(userdb, null, "\t");
+                        json = JSON.stringify(userdb, null, "\t");
                         fs.writeFile('./userdb.json', json, 'utf8', function(error) {
                                 if(error) {
-                                        console.log(`  Couldn't remove ${path.slice(2)} from .json.\n${error}`.red);
+                                        console.log(`  Couldn't remove ${filename} from .json.\n${error}`.red);
                                         return new Promise ((resolve, reject) => reject(err));
                                 }
                         });
@@ -255,7 +250,8 @@ const gitHubUpload = async (path, mess) => {
 
 // i hate this from the bottom of my heart
 function add (bot, mess, args) {
-        const userdb = fs.readFileSync('./userdb.json', 'utf8');
+        delete require.cache [ require.resolve('./userdb.json') ];
+        const userdb = require('./userdb.json');
         if (mess.channel.type == "DM") {
                 if (mess.author.bot) return;
                 if (mess.author.id in userdb) if (Object.keys(userdb[mess.author.id].playlist).length >= 4) return mess.channel.send({ content: "Your tracklist is too huge! Please delete some of your files before adding any new ones." });
@@ -268,7 +264,7 @@ function add (bot, mess, args) {
                                         if (!(path in userdb[mess.author.id].playlist)) {
                                                 userdb[mess.author.id].playlist[path] = { };
                                                 if (userdb[mess.author.id].username != mess.author.username) userdb[mess.author.id].username = mess.author.username;
-                                                let json = JSON.stringify(userdb, null, "\t");
+                                                json = JSON.stringify(userdb, null, "\t");
                                                 return new Promise((resolve, reject) => {
                                                         fs.writeFile('./userdb.json', json, 'utf8', function(error) {
                                                                 if(error) {
@@ -291,7 +287,7 @@ function add (bot, mess, args) {
                                                         [path]: { }
                                                 }
                                         };
-                                        let json = JSON.stringify(userdb, null, "\t");
+                                        json = JSON.stringify(userdb, null, "\t");
                                         return new Promise((resolve, reject) => {
                                                 fs.writeFile('./userdb.json', json, 'utf8', function(error) {
                                                         if(error) {
@@ -365,10 +361,10 @@ function add (bot, mess, args) {
                                                                         mess.channel.send({ content: "Your file has been successfully uploaded and added to your personal greetings!" });
                                                                         fs.open('./logs.txt', 'a+', (err, fd) => {
                                                                                 try {
-                                                                                        let x = new Date();
+                                                                                        x = new Date();
                                                                                         let hoursDiff = x.getHours() + 3;
                                                                                         x.setHours(hoursDiff);
-                                                                                        let logData = `[${x.toUTCString()}]: User ${mess.author.username} has ADDED the file named ${path.slice(2)}\n`;
+                                                                                        logData = `[${x.toUTCString()}]: User ${mess.author.username} has ADDED the file named ${path.slice(2)}\n`;
                                                                                         fs.write(fd, logData, async () => {
                                                                                                 await gitHubUpload('./logs.txt', mess)
                                                                                                 .then(() => {
@@ -400,7 +396,7 @@ function add (bot, mess, args) {
                                                         reject();
                                                 });
                                         });
-                                        writer.on('error', (error) => {
+                                        writer.on('error', () => {
                                                 console.log(`1. Failed to download the file.\n${error}`.red);
                                                 reject();
                                         });
@@ -454,7 +450,8 @@ function add (bot, mess, args) {
 }
 
 function dlt (bot, mess, args) {
-        const userdb = fs.readFileSync('./userdb.json', 'utf8');
+        delete require.cache [ require.resolve('./userdb.json') ];
+        const userdb = require('./userdb.json');
         const gitHubRemove = async filename => {
                 try {
                         const responseGET = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
@@ -494,24 +491,24 @@ function dlt (bot, mess, args) {
                                                 let filename;
                                                 if (args[1].endsWith('.mp3')) filename = args[1].toLowerCase().replace(/(\.mp3)+/g, '.mp3');
                                                 else filename = args[1].toLowerCase() + '.mp3';
-                                                let files = Object.keys(userdb[mess.author.id].playlist);
-                                                let index = files.indexOf(`./${filename}`);
+                                                files = Object.keys(userdb[mess.author.id].playlist);
+                                                index = files.indexOf(`./${filename}`);
                                                 //console.log(`./${filename}`);
                                                 //console.log(Object.keys(userdb[mess.author.id].playlist));
                                                 if(index > -1){
                                                         try {
                                                                 delete userdb[mess.author.id].playlist[`./${filename}`];
-                                                                let files = Object.keys(userdb[mess.author.id].playlist);
+                                                                files = Object.keys(userdb[mess.author.id].playlist);
                                                                 var count = 0;
-                                                                for (let i = 0; i < files.length; i++) {
+                                                                for (i = 0; i < files.length; i++) {
                                                                         if ("chance" in userdb[mess.author.id].playlist[files[i]]) count++;
                                                                 }
                                                                 console.log(`count = ${count}, length = ${files.length}`);
-                                                                if (count == files.length) for (let i = 0; i < files.length; i++) {
+                                                                if (count == files.length) for (i = 0; i < files.length; i++) {
                                                                         userdb[mess.author.id].playlist[files[i]] = {};
                                                                 }
                                                                 if (userdb[mess.author.id].username != mess.author.username) userdb[mess.author.id].username = mess.author.username;
-                                                                let json = JSON.stringify(userdb, null, "\t");
+                                                                json = JSON.stringify(userdb, null, "\t");
                                                                 fs.writeFileSync('./userdb.json', json, 'utf8');
                                                                 console.log("  Asynchronous writing of the file " + "userdb.json".cyan + " is complete.");
                                                                 fs.unlinkSync(`./${filename}`); 
@@ -556,10 +553,10 @@ function dlt (bot, mess, args) {
                                         console.log(`3. The file ${filename} has been successfully removed from GitHub.`.green); 
                                         fs.open('./logs.txt', 'a+', (err, fd) => {
                                                 try {
-                                                        let x = new Date();
+                                                        x = new Date();
                                                         let hoursDiff = x.getHours() + 3;
                                                         x.setHours(hoursDiff);
-                                                        let logData = `[${x.toUTCString()}]: User ${mess.author.username} has DELETED the file named ${filename}\n`;
+                                                        logData = `[${x.toUTCString()}]: User ${mess.author.username} has DELETED the file named ${filename}\n`;
                                                         fs.write(fd, logData, async () => {
                                                                 await gitHubUpload('./logs.txt', mess)
                                                                 .then(() => {
@@ -595,8 +592,9 @@ function sleep(ms) {
 }
 
 function rates (bot, mess, args) {
-        if (mess.channel.type == "DM") {
-                const userdb = fs.readFileSync('./userdb.json', 'utf8');
+        if (mess.channel.type == "DM") { 
+                delete require.cache [ require.resolve('./userdb.json') ];
+                const userdb = require('./userdb.json');
                 var filenames = Object.keys(userdb[mess.author.id].playlist);
                 var plLength = filenames.length;
                 if (mess.author.id in userdb && plLength > 0) {
@@ -604,7 +602,7 @@ function rates (bot, mess, args) {
                                 console.log(`\nUser ${mess.author.username} tries to set theiy playrates.`.yellow);
                                 var list = "";
                                 var rates = "";
-                                for (let i = 0; i < plLength; i++) {
+                                for (i = 0; i < plLength; i++) {
                                         list += filenames[i].slice(2) + "\n";
                                         if ("chance" in userdb[mess.author.id].playlist[filenames[i]]) rates += userdb[mess.author.id].playlist[filenames[i]].chance * 100 + "%\n";
                                         else rates += "No rate\n"
@@ -620,7 +618,7 @@ function rates (bot, mess, args) {
                                 .setThumbnail('https://lh3.googleusercontent.com/pw/AM-JKLWLzPhstQJP8X7UU_rOWeeQ0S5y_a9F8wD5HIv4-XK-ATSkhrRIPRKdXjatAQk_aFRjYXOw-frkgWP28PMkzf-P3XDacW4g5uJ5uD267iAvupg9uwoR8IybSlV5S_SG8RBUAtIeca83FWnaU5IyLmLx=w320-h271-no?authuser=0');
                                 
                                 var row = new Array();
-                                for (let i = 0; i < plLength; i++) {
+                                for (i = 0; i < plLength; i++) {
                                         row[i] = new Discord.MessageActionRow()
                                         .addComponents(
                                                 new Discord.MessageSelectMenu()
@@ -724,4 +722,4 @@ var comms_list = [
         //{name: "test", out: test, about: "Test"}
 ]
 
-export default { comms: comms_list };
+module.exports.comms = comms_list;
